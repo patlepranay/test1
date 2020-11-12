@@ -1,0 +1,168 @@
+
+
+#rcorners1 {
+  border-radius: 250px;
+  background: #ffffff; 
+  width: 1300px;
+  height: 430px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-7%, -50%);
+  opacity: 0.4;
+}
+   
+#rcorners2 {
+  border-radius: 50%;
+  background: #ffffff; 
+  width: 920px;
+  height: 770px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-10%, -50%);
+  opacity: 0.4;
+  z-index:0;
+}
+#rcorners3 {
+  border-radius: 50%;
+  background: #ffffff; 
+  width: 900px;
+  height: 900px;
+  position: absolute;
+  top: 50%;
+  transform: translate(65%, -50%);
+  opacity: 0.4;
+  z-index:0;
+}
+.card-text{
+  color: black;
+  font-weight: bold;
+}
+#box{
+  /* border-radius: 50%; */
+  background: #ffffff; 
+  width: 290px;
+  height: 240px;
+  /* position: absolute; */
+  /* margin-left: 20px; */
+  top: 50%;
+  transform: translate(-10%, 10%);
+  opacity: 0.4;
+  z-index:0;
+}
+#box0{
+  /* border-radius: 50%; */
+  background: #ffffff; 
+  width: 290px;
+  height: 240px;
+  /* position: absolute; */
+  /* margin-left: 20px; */
+  top: 50%;
+  transform: translate(-10%, 20%);
+  opacity: 0.4;
+  z-index:0;
+}
+#box1{
+  /* border-radius: 50%; */
+  background: #ffffff; 
+  width: 290px;
+  height: 240px;
+  /* position: absolute; */
+  margin-left: 30px;
+  top: 50%;
+  transform: translate(125%, -198%);
+  opacity: 0.4;
+  z-index:0;
+}
+#box2{
+  /* border-radius: 50%; */
+  background: #ffffff; 
+  width: 290px;
+  height: 240px;
+  /* position: absolute; */
+  margin-left: 30px;
+  top: 50%;
+  transform: translate(125%, -187%);
+  opacity: 0.4;
+  z-index:0;
+}
+#vm{
+  /* background: #ffffff;  */
+  width: 500px;
+  height: 230px;
+  /* position: absolute; */
+  margin-left: 30px;
+  top: 50%;
+  transform: translate(85%, -118%);
+  /* opacity: 0.4; */
+  z-index:0;
+}
+
+  .container {
+  position:relative;
+  color: black;
+}
+
+    
+  .contain {
+  position: relative;
+  color: black;
+}
+.contain1 {
+  position: relative;
+  color: black;
+}
+
+      .centerblock{ 
+    background-color: black; 
+    padding-top: 20px; 
+      } 
+  
+
+    .split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: -5px;
+  
+}
+  
+ .ex1 {
+  padding-right: 50%;
+}
+
+/* Control the left side */
+.left {
+  left: 0;
+  background-color: #111;
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+  background-color: #111;
+}
+
+/* If you want the content centered horizontally and vertically */
+.centered {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.lefted {
+  position: absolute;
+  top: 55%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+}
+
+/* Style the image inside the centered container, if needed */
+.centered img {
+  width: 150px;
+  border-radius: 50%;
+}

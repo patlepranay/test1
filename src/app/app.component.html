@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<title>Krishi Sarthi</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- <link rel="stylesheet" href="../assets/css/w3.css"> -->
+<!-- <link rel="stylesheet" href="../assets/check.css"> -->
+<!-- <link rel="stylesheet" href="../assets/css/tooplate-sty    le.css"> -->
+<style>
+body,
+    html {
+        height: 100%;
+        line-height: 1.8;
+        background-color: #E9E9E9;
+        padding-top: 30px;
+        margin: auto;
+        /* width: 60%; */
+        /* border: 3px solid #73AD21; */
+        /* padding: 10px; */
+    }
+}
+
+/* .bgimg-1 {
+    background-position: center;
+    background-size: cover;
+    background-image: url("../assets/images/farmer.jpg");
+    min-height: 100%;
+} */
+</style>
+
+<body>
+    <!-- ---------------HEADER STARTS HERE--------------- -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="border-radius: 0px">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="../assets/images/krushi sarthi final .png" style="max-width: 50px;" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive" style="font-size: 15px; ">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#home">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#ks_about_us">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#ks_vission_mission">Our Vission</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#ks_services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/blogs">Krishi Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/gallery">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/team">Our Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- ---------------HEADER ENDS HERE--------------- -->
+    <!-- ---------------------------------------------------- -->
+    <!-- ---------------------------------------------------- -->
+    <!-- ---------------------------------------------------- -->
+    <!-- ---------------------------------------------------- -->
+    <router-outlet></router-outlet>
+    <!-- ---------------FOOTER STARTS HERE--------------- -->
+    <footer class="w3-center w3-black w3-padding-64">
+        <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a><br><br>
+
+        <p>
+            &copy; Copyright Krishi Sarthi <br> All Rights Reserved</p>
+
+    </footer>
+    <!-- ---------------FOOTER ENDS HERE--------------- -->
+    <!-- ---------------------------------------------------- -->
+    <!-- ---------------------------------------------------- -->
+    <!-- ---------------------------------------------------- -->
+    <!-- ---------------------------------------------------- -->
+</body>
+
+</html>
