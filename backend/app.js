@@ -51,7 +51,7 @@ app.get("/blogs", (req, res, next) => {
             message: "Posts fetched successfully!",
             blogs: documents
         });
-        console.log(documents);
+        // console.log(documents);
     });
 });
 

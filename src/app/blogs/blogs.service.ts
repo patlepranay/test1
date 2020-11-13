@@ -3,16 +3,15 @@ import { HttpClient } from "@angular/common/http";
 import { Subject } from "rxjs";
 import { map } from 'rxjs/operators';
 
-
-
+import { environment } from "../../environments/environment"
+const BACKEND_URL = environment.apiUrl;
 @Injectable({ providedIn: "root" })
 export class BlogsService {
   constructor(private http: HttpClient) {}
     blogs;
   getBlogs():any {
     this.http
-      .get(
-        "http://localhost:3000/blogs"
+      .get(BACKEND_URL+"/blogs"
       ).subscribe(transformedBlogs => {
           this.blogs=Object(transformedBlogs)["blogs"]
         //   console.log(this.blogsData);
@@ -23,7 +22,7 @@ export class BlogsService {
   addBlog(author: string, title: string,body:string) {
     const blog  = { id: null, title: title, body: body,author:author };
     this.http
-      .post("http://localhost:3000/blogs/request", blog)
+      .post(BACKEND_URL+"/blogs/request", blog)
       .subscribe(responseData => {
         console.log(responseData);
       });
