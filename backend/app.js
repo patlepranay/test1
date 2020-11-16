@@ -29,6 +29,16 @@ app.use(cors());
 
 app.use("/", express.static(path.join(__dirname, "angular")));
 
+app.post("/blogs", (req, res, next) => {
+    Blog.find({}).then(documents => {
+        res.status(200).json({
+            message: "Posts fetched successfully!",
+            blogs: documents
+        });
+        // console.log(documents);
+    });
+});
+
 app.post("/blogs/request", (req, res, next) => {
     const blog = new Blog({
         title: req.body.title,
@@ -45,15 +55,6 @@ app.post("/blogs/request", (req, res, next) => {
     });
 });
 
-app.get("/blogs", (req, res, next) => {
-    Blog.find().then(documents => {
-        res.status(200).json({
-            message: "Posts fetched successfully!",
-            blogs: documents
-        });
-        // console.log(documents);
-    });
-});
 
 app.use((req, res, next) => {
     res.sendFile(path.join(__dirname, "angular", "index.html"))

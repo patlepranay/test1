@@ -9,14 +9,31 @@ import { BlogsService } from '../blogs.service';
   styleUrls: ['./blog-form.component.css']
 })
 export class BlogFormComponent implements OnInit {
-
-  constructor(public blogsService:BlogsService) { }
-
+  submitDone:Boolean=false;
+  error:string="Please Enter Valid Field Values";
+  constructor(public blogsService:BlogsService) {
+  }
+  
   ngOnInit(): void {
+    
+    // console.log("hello");
     this.blogsService.getBlogs();
   }
+
+   
   onSubmit(f:NgForm){
-    this.blogsService.addBlog(f.value.name,f.value.title,f.value.body)
+    if(f.valid)
+    {
+      this.blogsService.addBlog(f.value.name,f.value.title,f.value.body);
+      f.reset();
+      this.submitDone=true;
+
+    }
+    else
+    {
+      
+    }
+
   }
 
 } 

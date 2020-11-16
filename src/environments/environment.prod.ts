@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl: "http://localhost:3000" 
+  localEnv: "http://localhost:3000",
+  globalEnv:"https://krishi-sarthi.herokuapp.com"
 };

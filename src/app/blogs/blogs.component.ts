@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogsService } from './blogs.service';
+import { Subscription } from 'rxjs';
+import { Blog } from './blog.model';
 
 @Component({
   selector: 'app-blogs',
@@ -8,20 +10,22 @@ import { BlogsService } from './blogs.service';
 })
 export class BlogsComponent implements OnInit {
 
-  constructor(public blogsService: BlogsService) { }
-  
-  blogdata;
-  blogs;
-  ngOnInit(): void {
-    this.blogdata=this.blogsService.getBlogs();
-   this.blogs=this.blogdata;
-  }
-   
 
+  constructor(public blogsService: BlogsService) { }
+
+  ngOnInit(): void {
+    // console.log("hell")
+    this.getBlog();
+  }
+
+  blogs;
 
   getBlog() {
-    this.blogs=this.blogsService.getBlogs();
-    console.log(this.blogs);
+    this.blogsService.getBlogs().subscribe(transformedBlogs => {
+       var blogs=Object(transformedBlogs)["blogs"];
+       this.blogs=blogs;
+     });;
+    // console.log(this.blogs);
   }
 
 }

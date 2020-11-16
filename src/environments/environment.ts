@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  apiUrl: "http://localhost:3000"
+  localEnv: "http://localhost:3000",
+  globalEnv:"https://krishi-sarthi.herokuapp.com"
+
 };
 
 /*

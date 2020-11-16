@@ -1,0 +1,19 @@
+<h2 style="text-align: center;">This is admin Page and used for approvement of blogs</h2>
+<br>
+<br>
+<button (click)="getBlog()" class="btn btn-primary">fetch</button>
+<div *ngFor="let blog of blogs">
+    <div class="card container">
+        <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-9">
+                <div class="card-header">{{blog.title}}</div>
+                <div class="card-body">{{blog.body}}</div>
+                <div class="card-footer">{{blog.author}}</div>
+
+            </div>
+        </div>
+    </div>
+    <hr *ngIf='blog.status'>
+</div>
