@@ -17,7 +17,7 @@ export class BlogsService {
   
   getBlogs(): any {
     return this.http
-      .post(LOCAL_URL + "/blogs","request");    
+      .post(GLOBAL_URL + "/blogs","request");    
   }
 
   // getBlogUpdateListener() {
@@ -27,7 +27,7 @@ export class BlogsService {
   addBlog(author: string, title: string, body: string) {
     const blog = { id: null, title: title, body: body, author: author };
     this.http
-      .post(LOCAL_URL + "/blogs/request", blog)
+      .post(GLOBAL_URL + "/blogs/request", blog)
       .subscribe(responseData => {
         console.log(responseData);
       });
