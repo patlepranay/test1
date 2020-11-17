@@ -38,7 +38,7 @@ export class BlogsService {
   {
     // console.log(id);console.log(title);console.log(body);console.log(author);
       const updateBlog = { id: id, title: title, body:body,author:author,token:token };
-      this.http.put(LOCAL_URL +"/approve/"+ id, updateBlog)
+      this.http.put(GLOBAL_URL +"/approve/"+ id, updateBlog)
         .subscribe(response => {
           console.log(response);
           // const updatedPosts = [...this.posts];

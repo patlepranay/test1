@@ -34,7 +34,7 @@ export class AuthService {
   createUser(email: string, password: string) {
     const authData: AuthData = { email: email, password: password };
     this.http
-      .post(LOCAL_URL+"/krishi_sarthi/signup/admin/2112", authData)
+      .post(GLOBAL_URL+"/krishi_sarthi/signup/admin/2112", authData)
       .subscribe(response => {
         console.log(response);
         this.router.navigate(["/"]);
@@ -45,7 +45,7 @@ export class AuthService {
     const authData: AuthData = { email: email, password: password };
     this.http
       .post<{ token: string; expiresIn: number }>(
-        LOCAL_URL+"/krishi_sarthi/login/admin/2112",
+        GLOBAL_URL+"/krishi_sarthi/login/admin/2112",
         authData
       )
       .subscribe(response => {
