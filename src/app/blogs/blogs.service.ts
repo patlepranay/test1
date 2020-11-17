@@ -14,16 +14,11 @@ const GLOBAL_URL=environment.globalEnv;
 export class BlogsService {
   constructor(private http: HttpClient,private router: Router) { }
   private blogs;
-  // private blogsUpdated = new Subject<Blog[]>(); 
   
   getBlogs(): any {
     return this.http
       .post(GLOBAL_URL + "/blogs","request");    
   }
-
-  // getBlogUpdateListener() {
-  //   return this.blogsUpdated.asObservable();
-  // }
 
   addBlog(author: string, title: string, body: string) {
     const blog = { id: null, title: title, body: body, author: author };
@@ -41,11 +36,6 @@ export class BlogsService {
       this.http.put(GLOBAL_URL +"/approve/"+ id, updateBlog)
         .subscribe(response => {
           console.log(response);
-          // const updatedPosts = [...this.posts];
-          // const oldPostIndex = updatedPosts.findIndex(p => p.id === post.id);
-          // updatedPosts[oldPostIndex] = post;
-          // this.posts = updatedPosts;
-          // this.postsUpdated.next([...this.posts]);
           this.router.navigate(["/"]);
         });
   

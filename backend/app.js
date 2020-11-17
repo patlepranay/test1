@@ -35,7 +35,7 @@ app.use("/", express.static(path.join(__dirname, "angular")));
 app.post("/blogs", (req, res, next) => {
     Blog.find({}).then(documents => {
         res.status(200).json({
-            message: "Posts fetched successfully!",
+            message: "Blogs fetched successfully!",
             blogs: documents
         });
         // console.log(documents);
