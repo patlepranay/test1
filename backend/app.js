@@ -4,21 +4,24 @@ const bodyParser = require('body-parser');
 const path = require("path");
 const mongoose = require("mongoose");
 const Blog = require("./models/blog")
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
-
+const User = require("./models/user");
 
 
 const app = express();
 
 
-mongoose.connect("mongodb+srv://pranay:pranay147896325@ks1.o35j3.mongodb.net/ks1?retryWrites=true&w=majority")
+mongoose.connect("mongodb+srv://pranay:pranay147896325@ks1.o35j3.mongodb.net/ks1?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
         console.log("Connected to database!");
     })
     .catch(() => {
         console.log("Connection failed!");
     });
-const compression = require('compression')
+const compression = require('compression');
+const checkAuth = require('./middleware/check-auth');
 
 app.use(compression())
 
@@ -52,6 +55,78 @@ app.post("/blogs/request", (req, res, next) => {
             message: "Blog added successfully",
             postId: createdBlog._id
         });
+    });
+});
+
+app.put("/approve/:id", checkAuth, (req, res, next) => {
+    const blog = new Blog({
+        _id: req.body.id,
+        title: req.body.title,
+        body: req.body.body,
+        author: req.body.author,
+        status: true
+    });
+    Blog.updateOne({ _id: req.params.id }, blog).then(result => {
+        res.status(200).json({ message: "Update successful!" });
+    });
+});
+
+
+app.post("/krishi_sarthi/login/admin/2112", (req, res, next) => {
+    let fetchedUser;
+    User.findOne({ email: req.body.email })
+        .then(user => {
+            if (!user) {
+                return res.status(401).json({
+                    message: "Auth failed"
+                });
+            }
+            fetchedUser = user;
+            return bcrypt.compare(req.body.password, user.password);
+        })
+        .then(result => {
+            if (!result) {
+                return res.status(401).json({
+                    message: "Auth failed"
+                });
+            }
+            const token = jwt.sign({ email: fetchedUser.email, userId: fetchedUser._id },
+                "verification_for_approve_request", { expiresIn: "1h" }
+            );
+            res.status(200).json({
+                token: token,
+                expiresIn: 3600
+            });
+        })
+        .catch(err => {
+            return res.status(401).json({
+                message: "Auth failed"
+            });
+        });
+});
+
+
+app.post("/krishi_sarthi/signup/admin/2112", (req, res, next) => {
+    bcrypt.hash(req.body.password, 10).then(hash => {
+        const user = new User({
+            email: req.body.email,
+            password: hash
+        });
+        console.log(user)
+        user
+            .save()
+            .then(result => {
+                res.status(201).json({
+                    message: "User created!",
+                    result: result
+                });
+            })
+            .catch(err => {
+                console.log(err);
+                res.status(500).json({
+                    error: err
+                });
+            });
     });
 });
 

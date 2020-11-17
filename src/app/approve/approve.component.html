@@ -1,0 +1,20 @@
+<br>
+<h2>Admin Page for selecting the blogs</h2>
+<br><br><br>
+
+<div *ngFor="let blog of blogs">
+    <div class="card container" *ngIf='!blog.status'>
+        <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-9">
+                <div class="card-header" style="font-weight: bold;">{{blog.title}}</div>
+                <div class="card-body">{{blog.body}}</div>
+                <div class="card-footer" style="font-weight: bold;opacity: .7;">{{blog.author}}</div>
+                <br>
+                <button class="btn btn-danger" (click)="approveBlog(blog._id,blog.title,blog.body,blog.author)">Approve</button>
+            </div>
+        </div>
+    </div>
+    <hr *ngIf='!blog.status'>
+</div>

@@ -13,8 +13,10 @@ import { HomeComponent } from './home/home.component';
 import { TeamComponent } from './team/team.component';
 import { BlogFormComponent } from './blogs/blog-form/blog-form.component';
 import { CommonModule } from '@angular/common';
-// import { LoginComponent } from './auth/login/login.component';
-// import { SignupComponent } from './auth/signup/signup.component';
+import { ApproveComponent } from './approve/approve.component';
+import { LoginComponent } from './auth/login/login.component';
+import { SignupComponent } from './auth/signup/signup.component';
+
 
 
 
@@ -27,9 +29,10 @@ import { CommonModule } from '@angular/common';
     HomeComponent,
     TeamComponent,
     BlogFormComponent,
-    // LoginComponent,
-    // SignupComponent
- 
+    ApproveComponent,
+    LoginComponent,
+    SignupComponent,
+     
   ],
   imports: [
     BrowserModule,

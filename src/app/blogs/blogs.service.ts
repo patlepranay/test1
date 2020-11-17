@@ -5,13 +5,14 @@ import { map } from 'rxjs/operators';
 
 import { environment } from "../../environments/environment";
 import { Blog } from './blog.model';
+import { Router } from '@angular/router';
 
 const LOCAL_URL = environment.localEnv;
 const GLOBAL_URL=environment.globalEnv;
 
 @Injectable({ providedIn: "root" })
 export class BlogsService {
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,private router: Router) { }
   private blogs;
   // private blogsUpdated = new Subject<Blog[]>(); 
   
@@ -31,5 +32,22 @@ export class BlogsService {
       .subscribe(responseData => {
         console.log(responseData);
       });
+  }
+
+  approveBlog(id:string,title:string,body:string,author:string,token:string)
+  {
+    // console.log(id);console.log(title);console.log(body);console.log(author);
+      const updateBlog = { id: id, title: title, body:body,author:author,token:token };
+      this.http.put(LOCAL_URL +"/approve/"+ id, updateBlog)
+        .subscribe(response => {
+          console.log(response);
+          // const updatedPosts = [...this.posts];
+          // const oldPostIndex = updatedPosts.findIndex(p => p.id === post.id);
+          // updatedPosts[oldPostIndex] = post;
+          // this.posts = updatedPosts;
+          // this.postsUpdated.next([...this.posts]);
+          this.router.navigate(["/"]);
+        });
+  
   }
 }
