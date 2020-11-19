@@ -1,30 +1,28 @@
-#team {
-    padding: 80px 0 60px 0;
-}
+/*--------------------------------------------------------------
+# team
+--------------------------------------------------------------*/
 
-#team .member {
+.team .box {
+    padding: 20px;
+    background: #fff;
     text-align: center;
-    margin-bottom: 20px;
-}
-
-#team .member .pic {
-    margin-bottom: 15px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.12);
+    border-radius: 5px;
+    position: relative;
     overflow: hidden;
-    height: 260px;
 }
 
-#team .member .pic img {
-    max-width: 100%;
-}
-
-#team .member h4 {
-    font-weight: 700;
-    margin-bottom: 2px;
+.team h3 {
+    font-weight: 400;
+    margin: -20px -20px 25px -20px;
+    padding: 30px 15px;
     font-size: 18px;
+    font-weight: 600;
+    color: #777777;
+    background: #f8f8f8;
 }
 
-#team .member span {
-    font-style: italic;
-    display: block;
-    font-size: 13px;
+.team .featured h3 {
+    color: #fff;
+    background: #494949;
 }

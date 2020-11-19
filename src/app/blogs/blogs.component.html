@@ -24,6 +24,8 @@
 <!-- ---------------------------------------------------- -->
 <!-- ---------------------------------------------------- -->
 <!-- ---------------BLOGS STARTS HERE--------------- -->
+
+<h1 *ngIf="isLoading">loading blogs</h1>
 <div *ngFor="let blog of blogs">
     <div class="card container" *ngIf="blog.status">
         <div class="row">

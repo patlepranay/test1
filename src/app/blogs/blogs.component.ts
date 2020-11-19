@@ -10,6 +10,7 @@ import { Blog } from './blog.model';
 })
 export class BlogsComponent implements OnInit {
 
+  isLoading:boolean=true;
 
   constructor(public blogsService: BlogsService) { }
 
@@ -25,6 +26,7 @@ export class BlogsComponent implements OnInit {
        var blogs=Object(transformedBlogs)["blogs"];
        this.blogs=blogs;
      });;
+     this.isLoading=false;
     // console.log(this.blogs);
   }
 
