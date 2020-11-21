@@ -17,7 +17,7 @@ export class BlogsService {
 
   getBlogs(): any {
     return this.http
-      .post(GLOBAL_URL + "/blogs", "request");
+      .post(LOCAL_URL + "/blogs", "request");
   }
 
   addBlog(author: string, title: string, body: string, image: File) {
@@ -28,7 +28,7 @@ export class BlogsService {
     blogData.append("author", author);
     blogData.append("image", image, title);
     this.http
-      .post(GLOBAL_URL + "/blogs/request", blogData)
+      .post(LOCAL_URL + "/blogs/request", blogData)
       .subscribe(responseData => {
         console.log(responseData);
       });
