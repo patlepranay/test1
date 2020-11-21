@@ -24,8 +24,8 @@ export class ApproveComponent implements OnInit {
     // console.log(this.blogs);
   }
 
-  approveBlog(id:string,title:string,body:string,author:string){
-    this.blogsService.approveBlog(id,title,body,author,this.authService.getToken());
+  approveBlog(id:string,title:string,body:string,author:string,imagePath:string){
+    this.blogsService.approveBlog(id,title,body,author,imagePath,this.authService.getToken());
 
   }
 

@@ -6,6 +6,10 @@ const mongoose = require("mongoose");
 const Blog = require("./models/blog")
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+var fileExtension = require('file-extension')
+const multer = require('multer');
+// const path = require("path");
+
 
 const User = require("./models/user");
 
@@ -27,6 +31,31 @@ app.use(compression())
 
 app.use(bodyParser.json());
 app.use(cors());
+app.use("/images", express.static(path.join("backend/images")));
+
+const MIME_TYPE_MAP = {
+    'image/png': 'png',
+    'image/jpeg': 'jpg',
+    'image/jpg': 'jpg'
+}
+
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        const isValid = MIME_TYPE_MAP[file.mimetype];
+        let erroe = new Error("invalid mime type");
+        if (isValid) {
+            error = null;
+        }
+        cb(error, "backend/images");
+
+    },
+    filename: (req, file, cb) => {
+        const name = file.originalname.toLowerCase().split(' ').join('-');
+        const ext = MIME_TYPE_MAP[file.mimetype];
+        cb(null, name + '-' + Date.now() + '.' + ext);
+    }
+});
+
 
 
 
@@ -38,16 +67,17 @@ app.post("/blogs", (req, res, next) => {
             message: "Blogs fetched successfully!",
             blogs: documents
         });
-        // console.log(documents);
     });
 });
 
-app.post("/blogs/request", (req, res, next) => {
+app.post("/blogs/request", multer({ storage: storage }).single("image"), (req, res, next) => {
+    const url = req.protocol + "://" + req.get("host");
     const blog = new Blog({
         title: req.body.title,
         body: req.body.body,
         author: req.body.author,
-        status: false
+        status: false,
+        imagePath: url + "/images/" + req.file.filename
     });
     console.log("called post");
     blog.save().then(createdBlog => {
@@ -64,7 +94,8 @@ app.put("/approve/:id", checkAuth, (req, res, next) => {
         title: req.body.title,
         body: req.body.body,
         author: req.body.author,
-        status: true
+        status: true,
+        imagePath: req.body.imagePath
     });
     Blog.updateOne({ _id: req.params.id }, blog).then(result => {
         res.status(200).json({ message: "Update successful!" });

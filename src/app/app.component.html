@@ -13,7 +13,7 @@
 <!-- <link rel="stylesheet" href="../assets/check.css"> -->
 <!-- <link rel="stylesheet" href="../assets/css/tooplate-sty    le.css"> -->
 <style>
-body,
+    body,
     html {
         height: 100%;
         line-height: 1.8;
@@ -24,14 +24,6 @@ body,
         /* border: 3px solid #73AD21; */
         /* padding: 10px; */
     }
-}
-
-/* .bgimg-1 {
-    background-position: center;
-    background-size: cover;
-    background-image: url("../assets/images/farmer.jpg");
-    min-height: 100%;
-} */
 </style>
 
 <body>
@@ -47,30 +39,29 @@ body,
 
             <div class="collapse navbar-collapse" [ngbCollapse]="isMenuCollapsed" id="navbarResponsive" style="font-size: 15px; ">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#home">Home
-                            <span class="sr-only">(current)</span>
+                    <li class="nav-item" (click)="isMenuCollapsed = true">
+                        <a class="nav-link" href=#>Home
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" (click)="isMenuCollapsed = true">
                         <a class="nav-link" href="#ks_about_us">About Us</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" (click)="isMenuCollapsed = true">
                         <a class="nav-link" href="#ks_vission_mission">Our Vission</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" (click)="isMenuCollapsed = true">
                         <a class="nav-link" href="#ks_services">Services</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" (click)="isMenuCollapsed = true">
                         <a class="nav-link" routerLink="/blogs">Krishi Blogs</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" (click)="isMenuCollapsed = true">
                         <a class="nav-link" routerLink="/gallery">Gallery</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" (click)="isMenuCollapsed = true">
                         <a class="nav-link" routerLink="/team">Our Team</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" (click)="isMenuCollapsed = true">
                         <a class="nav-link" href="#contact">Contact</a>
                     </li>
                 </ul>

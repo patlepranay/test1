@@ -1,10 +1,11 @@
 const mongoose = require('mongoose');
 
 const blogSchema = mongoose.Schema({
-    body: { type: String, required: false },
-    title: { type: String, required: false },
-    author: { type: String, required: false },
-    status: { type: Boolean, required: false },
+    body: { type: String, required: true },
+    title: { type: String, required: true },
+    author: { type: String, required: true },
+    status: { type: Boolean, required: true },
+    imagePath: { type: String, required: true }
 
 });
 
