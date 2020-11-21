@@ -15,7 +15,7 @@
         <a class="btn btn-primary btn-lg" routerLink="/request" role="button">Make a blog request</a>
     </p>
 
-    <a class="btn btn-primary btn-lg" (click)="getBlog()" role="button">Fetch blog</a>
+    <!-- <a class="btn btn-primary btn-lg" (click)="getBlog()" role="button">Fetch blog</a> -->
 </div>
 <!-- <router-outlet></router-outlet> -->
 <!-- ---------------HERO ENDS HERE--------------- -->
@@ -34,7 +34,7 @@
     <div class="card container" *ngIf="blog.status">
         <div class="row">
             <div class="col-md-3">
-                <img [src]="blog.imagePath" class="img-fluid" [alt]="blog.title">
+                <img [src]="blog.imagePath" class="img-fluid" style="margin-top: 15px;" [alt]="blog.title">
             </div>
             <div class="col-md-9">
                 <div class="card-header" style="font-weight: bold;">{{blog.title}}</div>

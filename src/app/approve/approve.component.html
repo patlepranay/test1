@@ -6,7 +6,7 @@
     <div class="card container" *ngIf='!blog.status'>
         <div class="row">
             <div class="col-md-3">
-                <img src="../../assets/images/krushi sarthi final .png" style="max-width: 2px;" alt="">
+                <img [src]="blog.imagePath" class="img-fluid" style="margin-top: 15px;" [alt]="blog.title">
             </div>
             <div class="col-md-9">
                 <div class="card-header" style="font-weight: bold;">{{blog.title}}</div>
