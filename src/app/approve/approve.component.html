@@ -1,8 +1,13 @@
 <br>
-<h2>Admin Page for selecting the blogs</h2>
+<h2 style="text-align: center;">Admin Page </h2>
 <br><br><br>
 
-<div *ngFor="let blog of blogs">
+<button class="btn btn primary" (click)="showApprovedBlogs()">Go to approved blogs</button>
+
+<button class="btn btn primary" (click)="showBlogRequest()">Go to blog request</button>
+
+
+<div *ngFor="let blog of blogs" id="requestBlogs" [hidden]="approveBlogs">
     <div class="card container" *ngIf='!blog.status'>
         <div class="row">
             <div class="col-md-3">
@@ -14,6 +19,26 @@
                 <div class="card-footer" style="font-weight: bold;opacity: .7;">{{blog.author}}</div>
                 <br>
                 <button class="btn btn-danger" (click)="approveBlog(blog._id,blog.title,blog.body,blog.author,blog.imagePath)">Approve</button>
+                <button class="btn btn-danger" (click)="deleteBlog(blog._id)">Delete</button>
+            </div>
+        </div>
+    </div>
+    <hr *ngIf='!blog.status'>
+</div>
+
+
+<div *ngFor="let blog of blogs" id="approvedBlogs" [hidden]="requestBlogs">
+    <div class="card container" *ngIf='blog.status'>
+        <div class="row">
+            <div class="col-md-3">
+                <img [src]="blog.imagePath" class="img-fluid" style="margin-top: 15px;" [alt]="blog.title">
+            </div>
+            <div class="col-md-9">
+                <div class="card-header" style="font-weight: bold;">{{blog.title}}</div>
+                <div class="card-body" style="font-style: italic;">{{blog.body}}</div>
+                <div class="card-footer" style="font-weight: bold;opacity: .7;">{{blog.author}}</div>
+                <br>
+                <button class="btn btn-danger" (click)="deleteBlog(blog._id)">Delete</button>
             </div>
         </div>
     </div>

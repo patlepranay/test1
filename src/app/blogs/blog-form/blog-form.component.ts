@@ -22,7 +22,7 @@ export class BlogFormComponent implements OnInit {
     this.form = new FormGroup({
       'name': new FormControl(null, { validators: [Validators.required] }),
       'title': new FormControl(null, { validators: [Validators.required] }),
-      'image': new FormControl(null, { validators: [Validators.required] ,asyncValidators:[mimeType] }),
+      'image': new FormControl(null, { validators: [Validators.required], asyncValidators: [mimeType] }),
       'body': new FormControl(null, { validators: [Validators.required] })
     });
   }
@@ -31,9 +31,9 @@ export class BlogFormComponent implements OnInit {
     const file = (event.target as HTMLInputElement).files[0];
     this.form.patchValue({ image: file });
     this.form.get('image').updateValueAndValidity();
-    const reader=new FileReader();
-    reader.onload=()=>{
-      this.imagePreview=reader.result;
+    const reader = new FileReader();
+    reader.onload = () => {
+      this.imagePreview = reader.result;
 
     };
     reader.readAsDataURL(file);
@@ -44,8 +44,9 @@ export class BlogFormComponent implements OnInit {
 
   onSubmit() {
     if (this.form.valid) {
-      this.blogsService.addBlog(this.form.value.name, this.form.value.title, this.form.value.body,this.form.value.image);
+      this.blogsService.addBlog(this.form.value.name, this.form.value.title, this.form.value.body, this.form.value.image);
       this.form.reset();
+      this.imagePreview = null;
       this.submitDone = true;
 
     }

@@ -61,12 +61,6 @@ const storage = multer.diskStorage({
 
 app.use("/", express.static(path.join(__dirname, "angular")));
 
-// app.post("/message/request", (req, res, next) => {
-//     const message
-// }) {
-
-// }
-
 app.post("/blogs", (req, res, next) => {
     Blog.find({}).then(documents => {
         res.status(200).json({
@@ -83,7 +77,7 @@ app.post("/blogs/request", multer({ storage: storage }).single("image"), (req, r
         body: req.body.body,
         author: req.body.author,
         status: false,
-        imagePath: url + "/backend/images/" + req.file.filename
+        imagePath: url + "/images/" + req.file.filename
     });
     console.log("called post");
     blog.save().then(createdBlog => {
@@ -105,6 +99,14 @@ app.put("/approve/:id", checkAuth, (req, res, next) => {
     });
     Blog.updateOne({ _id: req.params.id }, blog).then(result => {
         res.status(200).json({ message: "Update successful!" });
+    });
+});
+
+
+app.delete("/delete/:id", (req, res, next) => {
+    Blog.deleteOne({ _id: req.params.id }).then(result => {
+        console.log(result);
+        res.status(200).json({ message: "Blog deleted!" });
     });
 });
 
