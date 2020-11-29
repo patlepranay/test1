@@ -15,7 +15,7 @@
         <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
     </p>
 </div> -->
-<section id="hero" class="d-flex justify-cntent-center align-items-center">
+<section id="hero" class="d-flex justify-content-center align-items-center">
     <div id="heroCarousel" class="container carousel carousel-fade">
         <div class="carousel-item active">
             <div class="carousel-container">
@@ -112,45 +112,52 @@
 <!-- ---------------------------------------------------- -->
 <!-- ---------------------------------------------------- -->
 <!-- ---------------VISSION MISSION STARTS HERE--------------- -->
-<div class="row justify-content-center">
-    <h2 style="font-family: Poppins;font-style: normal;font-weight: bolder;font-size: 68px;color: #494949;text-shadow: 28px 28px 14px rgba(18, 122, 1, 0.25);">Our Values</h2>
-</div>
-<div class="row">
-    <div class="col-md-12">
-        <div class="card">
-            <div class="card-body">
-                <h2 class="card-title card text-center"> <span class="badge badge-pill">
+<div class="container">
+    <div class="row justify-content-center">
+        <h2 style="font-family: Poppins;font-style: normal;font-weight: bolder;font-size: 68px;color: #494949;text-shadow: 28px 28px 14px rgba(18, 122, 1, 0.25);">Our Values</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <img src="../../assets/images/new3.jpg" class="img-fluid" alt="">
+        </div>
+        <div class="col-md-6">
+            <div class="">
+                <div class="card-body">
+                    <h2 class="card-title  text-center"> <span class="badge badge-pill">
                             <h2 style="font-family: Poppins;font-style: normal;font-weight: bold;font-size: 50px;color: #494949;text-shadow: 28px 28px 14px rgba(18, 122, 1, 0.25);">Vission</h2>
                         </span></h2>
-                <p class="card-text">
-                    <ul>
-                        <li class="container">
-                            <p style="text-align: center;">To assist farmers for prolific cultivation.
-                        </li>
-                    </ul>
-
+                    <p class="card-text">
+                        <ul>
+                            <li class="container">
+                                <p style="text-align: center;">To assist farmers for prolific cultivation.
+                            </li>
+                        </ul>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div class="row">
+    <div class="row">
 
-    <div class="col-md-12">
-        <div class="card text-left">
-            <div class="card-body">
-                <h2 class="card-title card text-center"><span class="badge badge-pill">
+        <div class="col-md-6">
+            <div class=" text-left">
+                <div class="">
+                    <h2 class="card-title  text-center"><span class="badge badge-pill">
                             <h2 style="font-family: Poppins;font-style: normal;font-weight: bold;font-size: 50px;color: #494949;text-shadow: 28px 28px 14px rgba(18, 122, 1, 0.25);">Mission</h2>
                         </span></h2>
-                <p class="card-text">
-                    <ul class="container">
-                        <li>To develop a platform wherein the farmer is provided with various options to buy and sell products from local to national level.</li>
-                        <li>To improve the supply chain from manufacturer to farmer and again from farmer to Agro-based industries thereby decreasing the middle men costs.</li>
-                        <li>To increase the technological utilizations in farming so as to ease man power and reduce the cost.</li>
-                        <li> To increase the customer base of vendors and farmers thereby enabling them to do business on a higher scale.
-                        </li>
-                    </ul>
+                    <p class="card-text">
+                        <ul class="container">
+                            <li>To develop a platform wherein the farmer is provided with various options to buy and sell products from local to national level.</li>
+                            <li>To improve the supply chain from manufacturer to farmer and again from farmer to Agro-based industries thereby decreasing the middle men costs.</li>
+                            <li>To increase the technological utilizations in farming so as to ease man power and reduce the cost.</li>
+                            <li> To increase the customer base of vendors and farmers thereby enabling them to do business on a higher scale.
+                            </li>
+                        </ul>
 
+                </div>
             </div>
+        </div>
+        <div class="col-md-6">
+            <img src="../../assets/images/new3.jpg" alt="" class="img-fluid">
         </div>
     </div>
 </div>
@@ -256,21 +263,25 @@
             </div>
             <div class="col-lg-5 col-md-8">
                 <div class="form">
-                    <form #contactForm="ngForm" onsubmit="messageRequest(contactForm)">
+                    <form #contactForm="ngForm" (submit)="messageRequest(contactForm)">
                         <div class="form-group">
-                            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" ngModel #name="ngModel" required />
+                            <p *ngIf="name.invalid && (name.dirty || name.touched)" class="text-danger">Name field cannot be empty.</p>
                             <div class="validate"></div>
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required email ngModel #email="ngModel" />
+                            <p *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger">Please enter Valid Email</p>
                             <div class="validate"></div>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required ngModel #subject="ngModel" />
+                            <p *ngIf="subject.invalid && (subject.dirty || subject.touched)" class="text-danger">Subject field cannot be empty.</p>
                             <div class="validate"></div>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                            <textarea class="form-control" name="message" rows="5" placeholder="Message" required ngModel #message="ngModel"></textarea>
+                            <p *ngIf="message.invalid && (message.dirty || message.touched)" class="text-danger">Message field cannot be empty.</p>
                             <div class="validate"></div>
                         </div>
                         <div class="text-center"><button type="submit">Send Message</button></div>

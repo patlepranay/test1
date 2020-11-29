@@ -28,7 +28,7 @@ export class BlogsComponent implements OnInit {
        this.blogs=blogs.reverse();
      });;
      this.isLoading=false;
-    // console.log(this.blogs);
+    console.log(this.blogs);
   }
 
 }

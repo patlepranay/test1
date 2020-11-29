@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogsService } from '../blogs/blogs.service';
 import { AuthService } from '../auth/auth.service';
+import { HomeService } from '../home/home.services';
 
 @Component({
   selector: 'app-approve',
@@ -9,27 +10,43 @@ import { AuthService } from '../auth/auth.service';
 })
 export class ApproveComponent implements OnInit {
 
-  constructor(public blogsService: BlogsService, public authService: AuthService) { }
+  constructor(public blogsService: BlogsService, public authService: AuthService, public homeService: HomeService) { }
 
   approveBlogs: boolean = false;
   requestBlogs: boolean = false;
+  showMessage:boolean=false;
 
   ngOnInit(): void {
     // this.getBlog();
   }
-  
+  messages;
+  getMessage() {
+    this.homeService.getMessage().subscribe(messages => {
+      var message = Object(messages)["messages"];
+      this.messages = message.reverse();
+    });;
+  }
 
-  showApprovedBlogs()
-  {
-    this.requestBlogs=false;
-    this.approveBlogs=true;
+
+  showApprovedBlogs() {
+    this.requestBlogs = false;
+    this.approveBlogs = true;
+    this.showMessage=false;
     this.getBlog();
   }
 
-  showBlogRequest(){
-    this.approveBlogs=false;
-    this.requestBlogs=true;
+  showBlogRequest() {
+    this.approveBlogs = false;
+    this.requestBlogs = true;
+    this.showMessage=false;
     this.getBlog();
+  }
+
+  showMessages() {
+    this.approveBlogs = false;
+    this.showMessage=true;
+    this.requestBlogs = false;
+    this.getMessage();
   }
 
 
@@ -47,8 +64,7 @@ export class ApproveComponent implements OnInit {
 
   }
 
-  deleteBlog(id:string)
-  {
+  deleteBlog(id: string) {
     this.blogsService.deleteBlog(id);
     this.getBlog();
   }

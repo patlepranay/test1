@@ -6,8 +6,10 @@
 
 <button class="btn btn primary" (click)="showBlogRequest()">Go to blog request</button>
 
+<button class="btn btn primary" (click)="showMessages()">Go to Messages</button>
 
-<div *ngFor="let blog of blogs" id="requestBlogs" [hidden]="approveBlogs">
+
+<div *ngFor="let blog of blogs" id="requestBlogs" [hidden]="!requestBlogs">
     <div class="card container" *ngIf='!blog.status'>
         <div class="row">
             <div class="col-md-3">
@@ -27,7 +29,7 @@
 </div>
 
 
-<div *ngFor="let blog of blogs" id="approvedBlogs" [hidden]="requestBlogs">
+<div *ngFor="let blog of blogs" id="approvedBlogs" [hidden]="!approveBlogs">
     <div class="card container" *ngIf='blog.status'>
         <div class="row">
             <div class="col-md-3">
@@ -38,9 +40,25 @@
                 <div class="card-body" style="font-style: italic;">{{blog.body}}</div>
                 <div class="card-footer" style="font-weight: bold;opacity: .7;">{{blog.author}}</div>
                 <br>
-                <button class="btn btn-danger" (click)="deleteBlog(blog._id)">Delete</button>
+                <button class="btn btn-danger" (click)="deleteBlog(blog._id)">Delete    </button>
             </div>
         </div>
     </div>
     <hr *ngIf='!blog.status'>
+</div>
+
+
+<div *ngFor="let message of messages" id="approvedBlogs" [hidden]="!showMessage">
+    <div class="card container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card-header" style="font-weight: bold;">{{message.subject}}</div>
+                <div class="card-header" style="font-style: italic;">{{message.email}}</div>
+                <div class="card-body" style="font-style: italic;">{{message.message}}</div>
+                <div class="card-footer" style="font-weight: bold;opacity: .7;">{{message.name}}</div>
+                <br>
+            </div>
+        </div>
+    </div>
+    <hr>
 </div>

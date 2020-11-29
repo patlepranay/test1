@@ -1,0 +1,9 @@
+    .noHover:hover {
+        background-color: transparent;
+        opacity: .8;
+    }
+    
+    .noHover {
+        opacity: .5;
+        ;
+    }

@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const path = require("path");
 const mongoose = require("mongoose");
 const Blog = require("./models/blog")
+const Message = require("./models/message")
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 var fileExtension = require('file-extension')
@@ -26,6 +27,7 @@ mongoose.connect("mongodb+srv://pranay:pranay147896325@ks1.o35j3.mongodb.net/ks1
     });
 const compression = require('compression');
 const checkAuth = require('./middleware/check-auth');
+const message = require('./models/message');
 
 app.use(compression())
 
@@ -60,6 +62,32 @@ const storage = multer.diskStorage({
 
 
 app.use("/", express.static(path.join(__dirname, "angular")));
+
+app.post("/message/request", (req, res, next) => {
+    const message = new Message({
+        name: req.body.name,
+        email: req.body.email,
+        subject: req.body.subject,
+        message: req.body.message
+    });
+    message.save().then(messageCreated => {
+        res.status(201).json({
+            message: "Message added successfully",
+            postId: messageCreated._id
+        });
+    });
+
+});
+
+
+app.post("/messages", (req, res, next) => {
+    Message.find({}).then(documents => {
+        res.status(200).json({
+            response: "Messasges fetched successfully!",
+            messages: documents
+        });
+    });
+});
 
 app.post("/blogs", (req, res, next) => {
     Blog.find({}).then(documents => {
@@ -103,7 +131,7 @@ app.put("/approve/:id", checkAuth, (req, res, next) => {
 });
 
 
-app.delete("/delete/:id", (req, res, next) => {
+app.delete("/delete/:id", checkAuth, (req, res, next) => {
     Blog.deleteOne({ _id: req.params.id }).then(result => {
         console.log(result);
         res.status(200).json({ message: "Blog deleted!" });
