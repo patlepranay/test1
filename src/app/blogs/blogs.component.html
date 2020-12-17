@@ -5,9 +5,11 @@
 <!-- ---------------BLOGS STARTS HERE--------------- -->
 
 <div class="row d-flex justify-content-end" style="margin-top: 50px;">
-    <a class="btn btn-primary" style="margin-right: 50px;" routerLink="/request" role="button">Make a blog request</a>
-    <br>
+    <a class="btn btn-primary" style="margin-right: 20px;" routerLink="/request" role="button">Make a blog request</a>
+
 </div>
+<br>
+<br>
 <h1 *ngIf="isLoading">loading blogs</h1>
 <div *ngFor="let blog of blogs">
     <div class="card container" *ngIf="blog.status">
