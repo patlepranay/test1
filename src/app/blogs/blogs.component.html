@@ -1,40 +1,19 @@
-<!-- ---------------HERO STARTS HERE--------------- -->
-<!-- <header class="w3-display-container w3-grayscale-min" id="home" style=" background-position: center;background-size: cover;background-image: url('../assets/images/farmer.jpg');min-height: 100%">
-        <div class="w3-display-left w3-text-white" style="padding:48px">
-            <span class="w3-jumbo w3-hide-small">Start something that matters</span><br>
-            <span class="w3-xxlarge w3-hide-large w3-hide-medium">Start something that matters</span><br>
-            <span class="w3-large">Stop wasting valuable time with projects that just isn't you.</span>
-        </div>
-    </header> -->
-<div class="jumbotron bgimg-1" style="height: 100vh;">
-    <h1 class="display-4">Hello, world!</h1>
-    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-    <hr class="my-4">
-    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-    <p class="lead">
-        <a class="btn btn-primary btn-lg" routerLink="/request" role="button">Make a blog request</a>
-    </p>
-
-    <!-- <a class="btn btn-primary btn-lg" (click)="getBlog()" role="button">Fetch blog</a> -->
-</div>
-<!-- <router-outlet></router-outlet> -->
-<!-- ---------------HERO ENDS HERE--------------- -->
 <!-- ---------------------------------------------------- -->
 <!-- ---------------------------------------------------- -->
 <!-- ---------------------------------------------------- -->
 <!-- ---------------------------------------------------- -->
 <!-- ---------------BLOGS STARTS HERE--------------- -->
 
-
-
-
-
+<div class="row d-flex justify-content-end" style="margin-top: 50px;">
+    <a class="btn btn-primary" style="margin-right: 50px;" routerLink="/request" role="button">Make a blog request</a>
+    <br>
+</div>
 <h1 *ngIf="isLoading">loading blogs</h1>
 <div *ngFor="let blog of blogs">
     <div class="card container" *ngIf="blog.status">
         <div class="row">
             <div class="col-md-3">
-                <img [src]="blog.imagePath" class="img-fluid" style="margin-top: 15px;" [alt]="blog.title">
+                <img src="../../assets/images/krushi sarthi final .png" class="img-fluid" style="margin-top: 15px;" [alt]="blog.title">
             </div>
             <div class="col-md-9">
                 <div class="card-header" style="font-weight: bold;">{{blog.title}}</div>

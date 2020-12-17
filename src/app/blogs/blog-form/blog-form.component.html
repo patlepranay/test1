@@ -1,24 +1,13 @@
-<!-- ---------------HERO STARTS HERE--------------- -->
-<div class="jumbotron bgimg-1" style="height: 100vh;">
-    <h1 class="display-4">Hello, world!</h1>
-    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-    <hr class="my-4">
-    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-    <p class="lead">
-        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-    </p>
-</div>
-<!-- ---------------HERO ENDS HERE--------------- -->
 <!-- ---------------------------------------------------- -->
 <!-- ---------------------------------------------------- -->
 <!-- ---------------------------------------------------- -->
 <!-- ---------------------------------------------------- -->
-<div class="container" id="form">
+<div class="container" id="form" style="margin-top: 50px;margin-bottom: 50px;">
     <div class="row" id="form_inside">
-        <div class="col-md-4" style="background-color:#adf2">
-            <h1 style="text-align: center;">We are happy to feature your blogs and messsages</h1>
+        <div class="col-md-4" style="background-color:#343a40">
+            <h1 style="text-align: center;color:white;opacity: .6;">We are happy to feature your blogs and messsages</h1>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8" style="background-color:lightgray;">
             <form [formGroup]="form" class="form-horizontal" (ngSubmit)="onSubmit()">
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="name">Name:</label>
@@ -35,7 +24,7 @@
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="pwd">Blog Image:</label>
                     <div class="col-sm-10">
-                        <button type="button" class="btn btn-primary" (click)="filePicker.click()">Pick Image</button>
+                        <button type="button" class="btn " (click)="filePicker.click()">Pick Image</button>
                         <input type="file" class="form-control" id="image" name="image" #filePicker (change)="onImagePicked($event)">
                         <div class="image-preview" *ngIf="imagePreview!=='' && imagePreview">
                             <img [src]="imagePreview" [alt]="form.value.title" class="image-fluid" style="max-height: 100px;">
@@ -50,10 +39,11 @@
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn">Submit</button>
                     </div>
                 </div>
-                <h1 *ngIf="submitDone">Blog Submitted</h1>
+                <h3 *ngIf="submitDone">Blog Submitted</h3>
+                <h3>{{error}}</h3>
             </form>
         </div>
     </div>

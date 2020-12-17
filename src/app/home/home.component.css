@@ -1,0 +1,13 @@
+@media screen and (min-width: 0px) and (max-width: 400px) {
+    #vission_image {
+        display: none;
+    }
+    /* show it on small screens */
+}
+
+@media screen and (min-width: 512px) {
+    #vission_image {
+        display: block;
+    }
+    /* hide it elsewhere */
+}

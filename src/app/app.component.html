@@ -47,30 +47,21 @@
                         <a class="nav-link" href="#ks_about_us">About Us</a>
                     </li>
                     <li class="nav-item" (click)="isMenuCollapsed = true">
-                        <a class="nav-link" href="#ks_vission_mission">Our Vission</a>
-                    </li>
-                    <li class="nav-item" (click)="isMenuCollapsed = true">
                         <a class="nav-link" href="#ks_services">Services</a>
                     </li>
                     <li class="nav-item" (click)="isMenuCollapsed = true">
                         <a class="nav-link" routerLink="/blogs">Krishi Blogs</a>
                     </li>
                     <li class="nav-item" (click)="isMenuCollapsed = true">
-
-                    </li>
-                    <li class="nav-item" (click)="isMenuCollapsed = true">
-
-                    </li>
-                    <li class="nav-item" (click)="isMenuCollapsed = true">
-
+                        <a class="nav-link" href="#contact">Contact</a>
                     </li>
                     <li class="nav-item">
                         <div ngbDropdown class="navbar-dark bg-dark">
                             <button class="btn nav-link" ngbDropdownToggle>More</button>
                             <div ngbDropdownMenu class="navbar-dark bg-dark" style="font-size:15px;">
+                                <a class="nav-link noHover" href="#vission_mission" ngbDropdownItem (click)="isMenuCollapsed = true">Vission Mission</a>
                                 <a class="nav-link noHover" routerLink="/gallery" ngbDropdownItem (click)="isMenuCollapsed = true">Gallery</a>
                                 <a class="nav-link noHover" routerLink="/team" ngbDropdownItem (click)="isMenuCollapsed = true">Our Team</a>
-                                <a class="nav-link noHover" href="#contact" ngbDropdownItem (click)="isMenuCollapsed = true">Contact</a>
                             </div>
                         </div>
                     </li>

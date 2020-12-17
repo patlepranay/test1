@@ -170,9 +170,12 @@ fieldset {
 }
 
 button {
-    outline: none;
-    background: none;
-    border: none;
+    background-color: #343a40;
+}
+
+button:hover {
+    background-color: black;
+    color: white;
 }
 
 

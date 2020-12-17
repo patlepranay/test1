@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm, FormGroup, FormControl, Validators } from '@angular/forms';
+import { NgForm, NgModel, FormGroup, FormControl, Validators } from '@angular/forms';
 import { BlogsService } from '../blogs.service';
 import { mimeType } from './mime-type.validator';
 
@@ -12,7 +12,7 @@ import { mimeType } from './mime-type.validator';
 })
 export class BlogFormComponent implements OnInit {
   submitDone: Boolean = false;
-  error: string = "Please Enter Valid Field Values";
+  error: string = "";
   form: FormGroup;
   imagePreview;
   constructor(public blogsService: BlogsService) {
@@ -51,7 +51,7 @@ export class BlogFormComponent implements OnInit {
 
     }
     else {
-
+      this.error = "Please Enter Valid field values";
     }
 
   }
