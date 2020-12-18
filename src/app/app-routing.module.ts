@@ -17,24 +17,24 @@ import { SignupComponent } from './auth/signup/signup.component';
 
 
 
-const appRoutes:Routes=[
-  {path:'',component:HomeComponent},
-  {path:'blogs',component:BlogsComponent},
-  {path:'gallery',component:GalleryComponent},
-  {path:'team',component:TeamComponent},
-  {path:'request',component:BlogFormComponent},
-  {path:'approve',component:ApproveComponent,canActivate: [AuthGuard]},
+const appRoutes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'blogs', component: BlogsComponent },
+  { path: 'gallery', component: GalleryComponent },
+  { path: 'team', component: TeamComponent },
+  { path: 'request', component: BlogFormComponent },
+  { path: 'approve', component: ApproveComponent, canActivate: [AuthGuard] },
   { path: "krishi_sarthi/login/admin/1221", component: LoginComponent },
   { path: "krishi_sarthi/signup/admin/1221", component: SignupComponent },
   // { path: "login", component: LoginComponent },
   // { path: "dashboard", component: DashboardComponent ,canActivate: [AuthGuard]}
 
 
-  
+
 ];
 @NgModule({
   imports: [RouterModule.forRoot(appRoutes)],
   exports: [RouterModule],
-  providers:[AuthGuard]
+  providers: [AuthGuard]
 })
 export class AppRoutingModule { }

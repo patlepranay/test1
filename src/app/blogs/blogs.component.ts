@@ -10,7 +10,7 @@ import { Blog } from './blog.model';
 })
 export class BlogsComponent implements OnInit {
 
-  isLoading:boolean=true;
+  isLoading: boolean = true;
   public isCollapsed = true;
 
   constructor(public blogsService: BlogsService) { }
@@ -24,10 +24,10 @@ export class BlogsComponent implements OnInit {
 
   getBlog() {
     this.blogsService.getBlogs().subscribe(transformedBlogs => {
-       var blogs=Object(transformedBlogs)["blogs"];
-       this.blogs=blogs.reverse();
-     });;
-     this.isLoading=false;
+      var blogs = Object(transformedBlogs)["blogs"];
+      this.blogs = blogs.reverse();
+    });;
+    this.isLoading = false;
     console.log(this.blogs);
   }
 

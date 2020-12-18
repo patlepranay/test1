@@ -6,11 +6,15 @@
 
 <div class="row d-flex justify-content-end" style="margin-top: 50px;">
     <a class="btn btn-primary" style="margin-right: 20px;" routerLink="/request" role="button">Make a blog request</a>
-
 </div>
 <br>
 <br>
-<h1 *ngIf="isLoading">loading blogs</h1>
+
+<div class="d-flex justify-content-center" *ngIf="!blogs">
+    <div class="spinner-border" style="width: 10rem; height: 10rem;" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
 <div *ngFor="let blog of blogs">
     <div class="card container" *ngIf="blog.status">
         <div class="row">
