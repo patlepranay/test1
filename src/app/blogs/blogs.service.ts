@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 
 const LOCAL_URL = environment.localEnv;
 const GLOBAL_URL = environment.globalEnv;
-const URL = LOCAL_URL;
+const URL = GLOBAL_URL;
 
 
 @Injectable({ providedIn: "root" })
