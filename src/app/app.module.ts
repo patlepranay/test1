@@ -4,8 +4,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
-import { NgxPageScrollModule } from 'ngx-page-scroll';
+// import { JwPaginationComponent } from 'jw-angular-pagination';
+import { NgxPaginationModule } from 'ngx-pagination';
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -35,6 +36,7 @@ import { SignupComponent } from './auth/signup/signup.component';
     ApproveComponent,
     LoginComponent,
     SignupComponent,
+    // JwPaginationComponent
 
   ],
   imports: [
@@ -45,8 +47,8 @@ import { SignupComponent } from './auth/signup/signup.component';
     BrowserAnimationsModule,
     CommonModule,
     ReactiveFormsModule,
-    NgxPageScrollModule,
-    NgxPageScrollCoreModule
+    NgxPaginationModule
+    // JwPaginationComponent
 
   ],
   providers: [
