@@ -91,7 +91,7 @@ app.post("/messages", (req, res, next) => {
 });
 
 app.post("/blogs", (req, res, next) => {
-    Blog.find({ status: true }).then(documents => {
+    Blog.find({}).then(documents => {
         res.status(200).json({
             message: "Blogs fetched successfully!",
             blogs: documents
@@ -99,7 +99,7 @@ app.post("/blogs", (req, res, next) => {
     });
 });
 
-app.post("/blogs/request", (req, res, next) => {
+app.post("/blogs/request", multer({ storage: storage }).single("image"), (req, res, next) => {
     const url = req.protocol + "://" + req.get("host");
     const blog = new Blog({
         title: req.body.title,
