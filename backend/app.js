@@ -42,21 +42,21 @@ const MIME_TYPE_MAP = {
 }
 
 const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        const isValid = MIME_TYPE_MAP[file.mimetype];
-        let erroe = new Error("invalid mime type");
-        if (isValid) {
-            error = null;
-        }
-        cb(error, "backend/images");
+    // destination: (req, file, cb) => {
+    //     const isValid = MIME_TYPE_MAP[file.mimetype];
+    //     let erroe = new Error("invalid mime type");
+    //     if (isValid) {
+    //         error = null;
+    //     }
+    //     cb(error, "backend/images");
 
-    },
-    filename: (req, file, cb) => {
-        // console.log(file);
-        const name = file.originalname.toLowerCase().split(' ').join('-');
-        const ext = MIME_TYPE_MAP[file.mimetype];
-        cb(null, name + '-' + Date.now() + '.' + ext);
-    }
+    // },
+    // filename: (req, file, cb) => {
+    //     // console.log(file);
+    //     const name = file.originalname.toLowerCase().split(' ').join('-');
+    //     const ext = MIME_TYPE_MAP[file.mimetype];
+    //     cb(null, name + '-' + Date.now() + '.' + ext);
+    // }
 });
 
 
@@ -100,13 +100,14 @@ app.post("/blogs", (req, res, next) => {
 });
 
 app.post("/blogs/request", multer({ storage: storage }).single("image"), (req, res, next) => {
-    const url = req.protocol + "://" + req.get("host");
+    // const url = req.protocol + "://" + req.get("host");
     const blog = new Blog({
         title: req.body.title,
         body: req.body.body,
         author: req.body.author,
         status: false,
-        imagePath: url + "/images/" + req.file.filename
+        // imagePath: url + "/images/" + req.file.filename
+        imagePath: "not_accepting_images"
     });
     console.log("called post");
     blog.save().then(createdBlog => {

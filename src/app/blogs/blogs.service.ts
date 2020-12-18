@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 
 const LOCAL_URL = environment.localEnv;
 const GLOBAL_URL = environment.globalEnv;
-const URL=GLOBAL_URL;
+const URL = LOCAL_URL;
 
 
 @Injectable({ providedIn: "root" })
@@ -36,9 +36,9 @@ export class BlogsService {
       });
   }
 
-  approveBlog(id: string, title: string, body: string, author: string,imagePath:string, token: string) {
+  approveBlog(id: string, title: string, body: string, author: string, imagePath: string, token: string) {
     // console.log(id);console.log(title);console.log(body);console.log(author);
-    const updateBlog = { id: id, title: title, body: body, author: author,imagePath:imagePath, token: token };
+    const updateBlog = { id: id, title: title, body: body, author: author, imagePath: imagePath, token: token };
     this.http.put(URL + "/approve/" + id, updateBlog)
       .subscribe(response => {
         console.log(response);
@@ -47,9 +47,9 @@ export class BlogsService {
 
   }
 
-  deleteBlog(id:string){
+  deleteBlog(id: string) {
     this.http
-      .delete(URL+"/delete/"+id)
+      .delete(URL + "/delete/" + id)
       .subscribe(response => {
         console.log(response);
         this.router.navigate(["/blogs"]);
