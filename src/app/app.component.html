@@ -40,28 +40,38 @@
             <div class="collapse navbar-collapse" [ngbCollapse]="isMenuCollapsed" id="navbarResponsive" style="font-size: 15px; ">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item" (click)="isMenuCollapsed = true">
-                        <a class="nav-link" href=#>Home
+                        <a class="nav-link" href=#>{{"app.header.home" | translate }}
                         </a>
                     </li>
-                    <li class="nav-item" (click)="isMenuCollapsed = true">
-                        <a class="nav-link" href="#ks_about_us">About Us</a>
+                    <li class="nav-item" (click)="isMenuCollapsed = true" *ngIf="router.url=='/' || router.url=='/#ks_about_us' || router.url=='/#ks_services' || router.url=='/#contact'|| router.url=='/#vission_mission' ">
+                        <a class="nav-link" href="#ks_about_us">{{"app.header.about" | translate }}</a>
+                    </li>
+                    <li class="nav-item" (click)="isMenuCollapsed = true" *ngIf="router.url=='/' || router.url=='/#ks_about_us' || router.url=='/#ks_services' || router.url=='/#contact'|| router.url=='/#vission_mission' ">
+                        <a class="nav-link" href="#ks_services">{{'app.header.services' | translate}}</a>
                     </li>
                     <li class="nav-item" (click)="isMenuCollapsed = true">
-                        <a class="nav-link" href="#ks_services">Services</a>
+                        <a class="nav-link" routerLink="/blogs">{{'app.header.krishi_blogs' | translate}}</a>
                     </li>
-                    <li class="nav-item" (click)="isMenuCollapsed = true">
-                        <a class="nav-link" routerLink="/blogs">Krishi Blogs</a>
-                    </li>
-                    <li class="nav-item" (click)="isMenuCollapsed = true">
-                        <a class="nav-link" href="#contact">Contact</a>
+                    <li class="nav-item" (click)="isMenuCollapsed = true" *ngIf="router.url=='/' || router.url=='/#ks_about_us' || router.url=='/#ks_services' || router.url=='/#contact'|| router.url=='/#vission_mission' ">
+                        <a class="nav-link" href="#contact">{{'app.header.contact' | translate}}</a>
                     </li>
                     <li class="nav-item">
                         <div ngbDropdown class="navbar-dark bg-dark">
-                            <button class="btn nav-link" ngbDropdownToggle>More</button>
+                            <button class="btn nav-link" ngbDropdownToggle>{{"app.header.more" | translate }}</button>
                             <div ngbDropdownMenu class="navbar-dark bg-dark" style="font-size:15px;">
-                                <a class="nav-link noHover" href="#vission_mission" ngbDropdownItem (click)="isMenuCollapsed = true">Vission Mission</a>
+                                <a class="nav-link noHover" href="#vission_mission" ngbDropdownItem (click)="isMenuCollapsed = true">{{"app.header.vission_mission" | translate }}</a>
                                 <!-- <a class="nav-link noHover" routerLink="/gallery" ngbDropdownItem (click)="isMenuCollapsed = true">Gallery</a> -->
-                                <a class="nav-link noHover" routerLink="/team" ngbDropdownItem (click)="isMenuCollapsed = true">Our Team</a>
+                                <a class="nav-link noHover" routerLink="/team" ngbDropdownItem (click)="isMenuCollapsed = true">{{"app.header.our_team" | translate }}</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div ngbDropdown class="navbar-dark bg-dark">
+                            <button class="btn nav-link" ngbDropdownToggle>{{"app.header.language" | translate }} <i class="fa fa-language" aria-hidden="true"></i>
+                            </button>
+                            <div ngbDropdownMenu class="navbar-dark bg-dark" style="font-size:15px;cursor: pointer; ">
+                                <a class="nav-link noHover" (click)="useLanguage('en')" ngbDropdownItem (click)="isMenuCollapsed = true">{{"app.header.english" | translate }}</a>
+                                <a class="nav-link noHover" (click)="useLanguage('mr')" ngbDropdownItem (click)="isMenuCollapsed = true">{{"app.header.marathi" | translate }}</a>
                             </div>
                         </div>
                     </li>
@@ -75,15 +85,23 @@
     <!-- ---------------------------------------------------- -->
     <!-- ---------------------------------------------------- -->
     <!-- ---------------------------------------------------- -->
+
+
     <router-outlet></router-outlet>
     <!-- ---------------FOOTER STARTS HERE--------------- -->
-    <footer class="w3-center w3-black w3-padding-64">
+
+    <div class="p-3 mb-2 bg-dark text-white text-center">
+        <p>
+            &copy; Copyright Krishi Sarthi <br> All Rights Reserved</p>
+    </div>
+
+    <!-- <footer class="w3-center w3-black w3-padding-64">
         <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a><br><br>
 
         <p>
             &copy; Copyright Krishi Sarthi <br> All Rights Reserved</p>
 
-    </footer>
+    </footer> -->
     <!-- ---------------FOOTER ENDS HERE--------------- -->
     <!-- ---------------------------------------------------- -->
     <!-- ---------------------------------------------------- -->

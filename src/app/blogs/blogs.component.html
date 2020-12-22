@@ -5,7 +5,7 @@
 <!-- ---------------BLOGS STARTS HERE--------------- -->
 
 <div class="row d-flex justify-content-end" style="margin-top: 50px;">
-    <a class="btn btn-primary" style="margin-right: 20px;" routerLink="/request" role="button">Make a blog request</a>
+    <a class="btn btn-dark" style="margin-right: 20px;" routerLink="/request" role="button">{{"home.blog.blog_request" | translate}}</a>
 </div>
 <br>
 <br>
@@ -15,8 +15,7 @@
         <span class="sr-only">Loading...</span>
     </div>
 </div>
-<div>
-
+<div *ngIf="blogs">
     <div *ngFor="let blog of newBlogs | paginate: { itemsPerPage: 4, currentPage:r }">
         <div class="card container" *ngIf="blog.status">
             <div class="row">
@@ -33,7 +32,6 @@
         <hr *ngIf='blog.status'>
     </div>
     <div class="d-flex justify-content-center">
-
         <pagination-controls class="my-pagination" (pageChange)="r = $event"></pagination-controls>
     </div>
 </div>

@@ -5,26 +5,26 @@
 <div class="container" id="form" style="margin-top: 50px;margin-bottom: 50px;">
     <div class="row" id="form_inside">
         <div class="col-md-4" style="background-color:#343a40">
-            <h1 style="text-align: center;color:white;opacity: .6;">We are happy to feature your blogs and messsages</h1>
+            <h1 style="text-align: center;color:white;opacity: .6;">{{"home.blog.desc" | translate}}</h1>
         </div>
         <div class="col-md-8" style="background-color:lightgray;">
             <form [formGroup]="form" class="form-horizontal" (ngSubmit)="onSubmit()">
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="name">Name:</label>
+                    <label class="control-label col-sm-2" for="name">{{"home.blog.name" | translate}}:</label>
                     <div class="col-sm-10">
                         <input class="input--style-1" type="text" class="form-control" id="name" placeholder="Enter Full Name" name="name" formControlName="name">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="pwd">Blog Title:</label>
+                    <label class="control-label col-sm-2" for="pwd">{{"home.blog.blog_title" | translate}}:</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="title" placeholder="Enter Blog Title" name="title" formControlName="title">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="pwd">Blog Image:</label>
+                    <label class="control-label col-sm-2" for="pwd">{{"home.blog.blog_image" | translate}}:</label>
                     <div class="col-sm-10">
-                        <button type="button" class="btn " (click)="filePicker.click()">Pick Image</button>
+                        <button type="button" class="btn " (click)="filePicker.click()">{{"home.blog.pick_image" | translate}}</button>
                         <input type="file" class="form-control" id="image" name="image" #filePicker (change)="onImagePicked($event)">
                         <div class="image-preview" *ngIf="imagePreview!=='' && imagePreview">
                             <img [src]="imagePreview" [alt]="form.value.title" class="image-fluid" style="max-height: 100px;">
@@ -32,14 +32,14 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="pwd">Blog Content:</label>
+                    <label class="control-label col-sm-2" for="pwd">{{"home.blog.blog_content" | translate}}:</label>
                     <div class="col-sm-10">
                         <textarea name="body" class="form-control" placeholder="Enter Blog Body" id="body" cols="30" rows="10" formControlName="body"></textarea>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn">Submit</button>
+                        <button type="submit" class="btn">{{"home.blog.submit" | translate}}</button>
                     </div>
                 </div>
                 <h3 *ngIf="submitDone">Blog Submitted</h3>

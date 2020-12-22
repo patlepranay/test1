@@ -1,0 +1,82 @@
+{
+    "app": {
+        "header": {
+            "home": "Home",
+            "about": "About Us",
+            "services": "Services",
+            "krishi_blogs": "Krishi Blogs",
+            "contact": "Contact",
+            "more": "More",
+            "vission_mission": "Vission Mission",
+            "our_team": "Our Team",
+            "language": "Language",
+            "english": "English",
+            "marathi": "Marathi"
+        }
+    },
+
+    "home": {
+        "hero": {
+            "title": "Welcome to Krushi Sarathi",
+            "title_subheading": "साद विश्वासाची, हमी गुणवत्तेची"
+        },
+        "about_us": {
+            "title": "About Us",
+            "desc1": "Krushi Sarathi is an innovative idea which takes its roots from the struggles of farmers for buying the pre-requisites and selling the farms products. Agriculture being the backbone of our economy, needs to be worked out so that it is equipped with technical sustainability. This platform consists of everything a farmer requires for farming right from seeds, fertilizers to pesticides and weedicides.",
+            "desc2": "Krushi Sarathi is a bunch of professionals coming from various backgrounds working with a common aim to make agriculture sustainable through various means such as improving supply chain management,providing technical aid to the farmers,helping them to compare markets before buying or selling.With a user - friendly interface,this platform is going to help the farmers to choose their products to be bought and sold from a nationwide array of vendors.It will also help the vendors to increase their business from local to regional and more."
+        },
+        "why_choose_us": {
+            "title": "Why Choose Us",
+            "quality_product": "Quality Products",
+            "quality_product_description": "We aim at supplying first-class quality products. Quality assurance is our foremost priority.",
+            "residential_delivery": "Residential Delivery",
+            "residential_delivery_description": "There is no need for wandering around in search of shops for purchasing the products, these will be delivered at your doorstep.",
+            "excellent_service": "Excellent Service",
+            "excellent_service_description": "There will be no room left for any mistakes while serving. Instant redressal will be done in case of any error."
+        },
+        "vission_mission": {
+            "title": "Our Values",
+            "vission": "Vission",
+            "vission_1": "To assist farmers for prolific cultivation.",
+            "mission": "Mission",
+            "mission_1": "To develop a platform wherein the farmer is provided with various options to buy and sell products from local to national level.",
+            "mission_2": "To improve the supply chain from manufacturer to farmer and again from farmer to Agro-based industries thereby decreasing the middle men costs.",
+            "mission_3": "To increase the technological utilizations in farming so as to ease man power and reduce the cost.",
+            "mission_4": "To increase the customer base of vendors and farmers thereby enabling them to do business on a higher scale."
+        },
+        "services": {
+            "title": "Services",
+            "home_delivery": "Home Delivery",
+            "home_delivery_desc": "Tension for transportation? Worry no more! We promise safe, doorstep delivery of your order ",
+            "online_booking": "Online Booking",
+            "online_booking_desc": "Tough tasks? One solution-Advanced Technology. Book tractor, JCB, Thresher and other such equipments on our online portal.",
+            "online_market": "Online Market",
+            "online_market_desc": "With an aim to take an agricultural trade to the next level, we have set up an online market for farmers and vendors to buy and sell agro-products.",
+            "consultancy": "Consultancy",
+            "consultancy_desc": "Got queries regarding crop, cattle or cultivation?, Booking tools or tractor? We are here to hear it all, with a team of experts to answer and help you out."
+        },
+        "contact_us": {
+            "title": "Contact Us",
+            "address": "Near Maha eSeva Centre, Buldhana Road,Undri,Khamgaon,Buldhana",
+            "email": "krushisarathi2020@gmail.com",
+            "phone_1": "9359138097",
+            "phone_2": "7758822698",
+            "phone_3": "9604246581",
+            "send_message": "Send Message",
+            "your_name": "Your Name",
+            "your_email": "Your Email",
+            "subject": "Subject",
+            "message": "Message"
+        },
+        "blog": {
+            "blog_request": "Make a blog request",
+            "desc": "We are happy to feature your blogs and messsages",
+            "name": "Name",
+            "blog_title": "Blog Title",
+            "blog_image": "Blog Image",
+            "pick_image": "Pick Image",
+            "blog_content": "Blog Content",
+            "submit": "Submit"
+        }
+    }
+}
