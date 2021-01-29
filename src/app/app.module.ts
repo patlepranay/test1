@@ -24,6 +24,7 @@ import { SignupComponent } from './auth/signup/signup.component';
 
 
 
+
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }

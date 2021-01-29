@@ -15,19 +15,22 @@
         <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
     </p>
 </div> -->
-<section id="hero" class="d-flex justify-content-center align-items-center img-fluid">
-    <div id="heroCarousel" class="container carousel carousel-fade">
-        <div class="carousel-item active">
-            <div class="carousel-container">
-                <h2 i18n="@@welcome_line">{{"home.hero.title" | translate }}</h2>
-                <h3 style="color: white;">साद विश्वासाची, हमी गुणवत्तेची</h3>
-                <!-- <p>Krushi Sarathi is an innovative idea which takes its roots from the struggles of farmers for buying the pre-requisites and selling the farms products. Agriculture being the backbone of our economy, needs to be worked out so that it is
+<section
+  id="hero"
+  data-aos="fade-up"
+  class="d-flex justify-content-center align-items-center img-fluid"
+>
+  <div id="heroCarousel" class="container carousel carousel-fade">
+    <div class="carousel-item active">
+      <div class="carousel-container">
+        <h2 i18n="@@welcome_line">{{ "home.hero.title" | translate }}</h2>
+        <h3 style="color: white">साद विश्वासाची, हमी गुणवत्तेची</h3>
+        <!-- <p>Krushi Sarathi is an innovative idea which takes its roots from the struggles of farmers for buying the pre-requisites and selling the farms products. Agriculture being the backbone of our economy, needs to be worked out so that it is
                     equipped with technical sustainability.
                 </p> -->
-
-            </div>
-        </div>
+      </div>
     </div>
+  </div>
 </section>
 <!-- ---------------HERO ENDS HERE--------------- -->
 <!-- ---------------------------------------------------- -->
@@ -35,25 +38,54 @@
 <!-- ---------------------------------------------------- -->
 <!-- ---------------------------------------------------- -->
 <!-- ---------------ABOUT US STARTS HERE--------------- -->
-<section id="ks_about_us">
-    <br><br>
-    <div class="container">
-        <div class="row d-flex justify-content-center">
-            <h2 style="font-family: Poppins;font-weight: bolder;font-size: 68px;color: #494949;text-shadow: 28px 28px 14px rgba(18, 122, 1, 0.25);padding-left: 10px;text-align: center;" p>{{"home.about_us.title" | translate }}</h2>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <img src="../assets/images/farmer.jpg" class="img-fluid" style="height: 280px;">
-            </div>
-            <div class="col-md-8">
-                <p style="font-family: Poppins;font-style: normal;font-weight: normal;font-size: 15px;line-height: 20px;color: #616161;">
-                    {{"home.about_us.desc1" | translate }}<br><br>{{"home.about_us.desc2" | translate }}
-                </p>
-            </div>
-        </div>
+<section id="ks_about_us" data-aos="fade-up">
+  <br /><br />
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      <h2
+        style="
+          font-family: Poppins;
+          font-weight: bolder;
+          font-size: 68px;
+          color: #494949;
+          text-shadow: 28px 28px 14px rgba(18, 122, 1, 0.25);
+          padding-left: 10px;
+          text-align: center;
+        "
+        p
+      >
+        {{ "home.about_us.title" | translate }}
+      </h2>
     </div>
-    <br>
+    <div class="row">
+      <div class="col-md-4">
+        <img
+          src="../assets/images/farmer.jpg"
+          class="img-fluid"
+          style="height: 280px"
+        />
+      </div>
+      <div class="col-md-8">
+        <p
+          style="
+            font-family: Poppins;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 15px;
+            line-height: 20px;
+            color: #616161;
+          "
+        >
+          {{ "home.about_us.desc1" | translate }}<br /><br />{{
+            "home.about_us.desc2" | translate
+          }}
+        </p>
+      </div>
+    </div>
+  </div>
+  <br />
 </section>
+
 <!-- ---------------ABOUT US ENDS HERE--------------- -->
 <!-- ---------------------------------------------------- -->
 <!-- ---------------------------------------------------- -->
@@ -61,47 +93,108 @@
 <!-- ---------------------------------------------------- -->
 <!-- ---------------WHY CHOOSE STARTS HERE--------------- -->
 <section id="ks_why_choose_us">
-    <hr>
-    <div class="container">
-        <div class="row d-flex justify-content-center">
-            <h2 style="font-family: Poppins;font-weight: bolder;font-size: 68px;color: #494949;text-shadow: 28px 28px 14px rgba(18, 122, 1, 0.25);padding-left: 10px;text-align: center;" p>{{"home.why_choose_us.title" | translate }}</h2>
-        </div>
-        <br>
-        <section class="tm-section-5" id="tm-section-5">
-            <div class="row">
-                <div class="col-lg-4 col-md-12 col-sm-12">
-                    <div class="image fit">
-                        <img src="../../assets/images/tm-sc4-img-1.jpg" class="img-fluid">
-                    </div>
-                </div>
-                <div class="col-lg-8 col-md-12 col-sm-12 pl-lg-0">
-                    <div class="media tm-media">
-                        <img src="../../assets/images/Group 32.png" class="img-responsive tm-media-img">
-                        <div class="media-body tm-box-5">
-                            <h2 style="font-family: Poppins;font-style: normal;font-weight: bolder;color: #494949;">{{"home.why_choose_us.quality_product" | translate }}</h2>
-                            <p class="mb-0">{{"home.why_choose_us.quality_product_description" | translate }}</p>
-                        </div>
-                    </div>
-                    <div class="media tm-media">
-                        <img src="../../assets/images/Group 30.png" class="img-responsive tm-media-img">
-                        <div class="media-body tm-box-5">
-                            <h2 style="font-family: Poppins;font-style: normal;font-weight: bolder;color: #494949;">{{"home.why_choose_us.residential_delivery" | translate }}</h2>
-                            <p class="mb-0">{{"home.why_choose_us.residential_delivery_description" | translate }}</p>
-                        </div>
-                    </div>
-                    <div class="media tm-media">
-                        <img src="../../assets/images/Group 31.png" class="img-responsive tm-media-img">
-                        <div class="media-body tm-box-5">
-                            <h2 style="font-family: Poppins;font-style: normal;font-weight: bolder;color: #494949;">{{"home.why_choose_us.excellent_service" | translate }}</h2>
-                            <p class="mb-0"> {{"home.why_choose_us.excellent_service_description" | translate }}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <hr />
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      <h2
+        style="
+          font-family: Poppins;
+          font-weight: bolder;
+          font-size: 68px;
+          color: #494949;
+          text-shadow: 28px 28px 14px rgba(18, 122, 1, 0.25);
+          padding-left: 10px;
+          text-align: center;
+        "
+        p
+      >
+        {{ "home.why_choose_us.title" | translate }}
+      </h2>
     </div>
-    <br>
-
+    <br />
+    <section class="tm-section-5" id="tm-section-5">
+      <div class="row">
+        <div class="col-lg-4 col-md-12 col-sm-12">
+          <div class="image fit">
+            <img src="../../assets/images/tm-sc4-img-1.jpg" class="img-fluid" />
+          </div>
+        </div>
+        <div class="col-lg-8 col-md-12 col-sm-12 pl-lg-0">
+          <div class="media tm-media">
+            <img
+              src="../../assets/images/Group 32.png"
+              class="img-responsive tm-media-img"
+            />
+            <div class="media-body tm-box-5">
+              <h2
+                style="
+                  font-family: Poppins;
+                  font-style: normal;
+                  font-weight: bolder;
+                  color: #494949;
+                "
+              >
+                {{ "home.why_choose_us.quality_product" | translate }}
+              </h2>
+              <p class="mb-0">
+                {{
+                  "home.why_choose_us.quality_product_description" | translate
+                }}
+              </p>
+            </div>
+          </div>
+          <div class="media tm-media">
+            <img
+              src="../../assets/images/Group 30.png"
+              class="img-responsive tm-media-img"
+            />
+            <div class="media-body tm-box-5">
+              <h2
+                style="
+                  font-family: Poppins;
+                  font-style: normal;
+                  font-weight: bolder;
+                  color: #494949;
+                "
+              >
+                {{ "home.why_choose_us.residential_delivery" | translate }}
+              </h2>
+              <p class="mb-0">
+                {{
+                  "home.why_choose_us.residential_delivery_description"
+                    | translate
+                }}
+              </p>
+            </div>
+          </div>
+          <div class="media tm-media">
+            <img
+              src="../../assets/images/Group 31.png"
+              class="img-responsive tm-media-img"
+            />
+            <div class="media-body tm-box-5">
+              <h2
+                style="
+                  font-family: Poppins;
+                  font-style: normal;
+                  font-weight: bolder;
+                  color: #494949;
+                "
+              >
+                {{ "home.why_choose_us.excellent_service" | translate }}
+              </h2>
+              <p class="mb-0">
+                {{
+                  "home.why_choose_us.excellent_service_description" | translate
+                }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <br />
 </section>
 <!-- ---------------WHY CHOOSE US ENDS HERE--------------- -->
 <!-- ---------------------------------------------------- -->
@@ -110,58 +203,105 @@
 <!-- ---------------------------------------------------- -->
 <!-- ---------------VISSION MISSION STARTS HERE--------------- -->
 <div class="container" id="vission_mission">
-    <br>
-    <hr><br>
-    <div class="row justify-content-center">
-        <h2 style="font-family: Poppins;font-style: normal;font-weight: bolder;font-size: 68px;color: #494949;text-shadow: 28px 28px 14px rgba(18, 122, 1, 0.25); padding-left: 10px;text-align: center;">{{"home.vission_mission.title" | translate }}</h2>
+  <br />
+  <hr />
+  <br />
+  <div class="row justify-content-center">
+    <h2
+      style="
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: bolder;
+        font-size: 68px;
+        color: #494949;
+        text-shadow: 28px 28px 14px rgba(18, 122, 1, 0.25);
+        padding-left: 10px;
+        text-align: center;
+      "
+    >
+      {{ "home.vission_mission.title" | translate }}
+    </h2>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <img
+        id="vission_image"
+        src="../../assets/images/new3.jpg"
+        class="img-fluid"
+        alt=""
+      />
     </div>
-    <div class="row">
-        <div class="col-md-6">
-            <img id="vission_image" src="../../assets/images/new3.jpg" class="img-fluid" alt="">
+    <div class="col-md-6">
+      <div class="">
+        <div class="card-body">
+          <h2 class="card-title text-center">
+            <span class="badge badge-pill">
+              <h2
+                style="
+                  font-family: Poppins;
+                  font-style: normal;
+                  font-weight: bold;
+                  font-size: 50px;
+                  color: #494949;
+                  text-shadow: 28px 28px 14px rgba(18, 122, 1, 0.25);
+                "
+              >
+                {{ "home.vission_mission.vission" | translate }}
+              </h2>
+            </span>
+          </h2>
+          <p class="card-text"></p>
+          <ul style="text-align: center">
+            <li class="container">
+              <p>{{ "home.vission_mission.vission_1" | translate }}</p>
+            </li>
+          </ul>
         </div>
-        <div class="col-md-6">
-            <div class="">
-                <div class="card-body">
-                    <h2 class="card-title  text-center"> <span class="badge badge-pill">
-                            <h2 style="font-family: Poppins;font-style: normal;font-weight: bold;font-size: 50px;color: #494949;text-shadow: 28px 28px 14px rgba(18, 122, 1, 0.25);">{{"home.vission_mission.vission" | translate }}</h2>
-                        </span></h2>
-                    <p class="card-text">
-                        <ul style="text-align: center;">
-                            <li class="container">
-                                <p>{{"home.vission_mission.vission_1" | translate }}
-                            </li>
-                        </ul>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
-    <div class="row">
-
-        <div class="col-md-6">
-            <div class=" text-left">
-                <div class="">
-                    <h2 class="card-title  text-center"><span class="badge badge-pill">
-                            <h2 style="font-family: Poppins;font-style: normal;font-weight: bold;font-size: 50px;color: #494949;text-shadow: 28px 28px 14px rgba(18, 122, 1, 0.25);">{{"home.vission_mission.mission" | translate }}</h2>
-                        </span></h2>
-                    <p class="card-text">
-                        <ul class="container" style="text-align: center;">
-                            <li>{{"home.vission_mission.mission_1" | translate }}</li>
-                            <li>{{"home.vission_mission.mission_2" | translate }}</li>
-                            <li>{{"home.vission_mission.mission_3" | translate }}</li>
-                            <li> {{"home.vission_mission.mission_4" | translate }}
-                            </li>
-                        </ul>
-
-                </div>
-            </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="text-left">
+        <div class="">
+          <h2 class="card-title text-center">
+            <span class="badge badge-pill">
+              <h2
+                style="
+                  font-family: Poppins;
+                  font-style: normal;
+                  font-weight: bold;
+                  font-size: 50px;
+                  color: #494949;
+                  text-shadow: 28px 28px 14px rgba(18, 122, 1, 0.25);
+                "
+              >
+                {{ "home.vission_mission.mission" | translate }}
+              </h2>
+            </span>
+          </h2>
+          <p class="card-text"></p>
+          <ul class="container" style="text-align: center">
+            <li>{{ "home.vission_mission.mission_1" | translate }}</li>
+            <li>{{ "home.vission_mission.mission_2" | translate }}</li>
+            <li>{{ "home.vission_mission.mission_3" | translate }}</li>
+            <li>{{ "home.vission_mission.mission_4" | translate }}</li>
+          </ul>
         </div>
-        <div class="col-md-6">
-            <img id="vission_image" src="../../assets/images/new3.jpg" alt="" class="img-fluid">
-        </div>
+      </div>
     </div>
+    <div class="col-md-6">
+      <img
+        id="vission_image"
+        src="../../assets/images/new3.jpg"
+        alt=""
+        class="img-fluid"
+      />
+    </div>
+  </div>
 </div>
-<br>
-<hr>
+<br />
+<hr />
 <!-- ---------------VISSION MISSION ENDS HERE--------------- -->
 <!-- ---------------------------------------------------- -->
 <!-- ---------------------------------------------------- -->
@@ -169,60 +309,146 @@
 <!-- ---------------------------------------------------- -->
 <!-- ---------------SERVICES STARTS HERE--------------- -->
 <section class="page-section" id="ks_services">
-    <div class="container">
-        <div class="text-center">
-            <h2 style="font-family: Poppins;font-style: normal;font-weight: bolder;font-size: 68px;color: #494949;text-shadow: 28px 28px 14px rgba(18, 122, 1, 0.25);text-align: center;">{{"home.services.title" | translate }}</h2>
-        </div>
-        <br>
-        <ul class="timeline">
-            <li>
-                <div class="timeline-image"><img class="rounded-circle img-fluid" src="../../assets/images/Group 53.png" alt="" /></div>
-                <div class="timeline-panel">
-                    <div class="timeline-heading">
-                        <h4 style="font-family: Poppins;font-style: normal;font-weight: bold;font-size: 25px;color: #494949;text-shadow: 28px 28px 14px rgba(18, 122, 1, 0.25);">{{"home.services.home_delivery" | translate }}</h4>
-                    </div>
-                    <div class="timeline-body">
-                        <p class="text-muted">{{"home.services.home_delivery_desc" | translate }}</p>
-                    </div>
-                </div>
-            </li>
-            <li class="timeline-inverted">
-                <div class="timeline-image"><img class="rounded-circle img-fluid" src="../../assets/images/Group 51.png" alt="" /></div>
-                <div class="timeline-panel">
-                    <div class="timeline-heading">
-                        <h4 style="font-family: Poppins;font-style: normal;font-weight: bold;font-size: 25px;color: #494949;text-shadow: 28px 28px 14px rgba(18, 122, 1, 0.25);">{{"home.services.online_booking" | translate }}</h4>
-                    </div>
-                    <div class="timeline-body">
-                        <p class="text-muted">{{"home.services.online_booking_desc" | translate }}</p>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="timeline-image"><img class="rounded-circle img-fluid" src="../../assets/images/Group 54.png" alt="" /></div>
-                <div class="timeline-panel">
-                    <div class="timeline-heading">
-                        <h4 style="font-family: Poppins;font-style: normal;font-weight: bold;font-size: 25px;color: #494949;text-shadow: 28px 28px 14px rgba(18, 122, 1, 0.25);">{{"home.services.online_market" | translate }}</h4>
-                    </div>
-                    <div class="timeline-body">
-                        <p class="text-muted">{{"home.services.online_market_desc" | translate }}</p>
-                    </div>
-                </div>
-            </li>
-            <li class="timeline-inverted">
-                <div class="timeline-image">
-                    <img class="rounded-circle img-fluid" src="../../assets/images/Group 52.png" alt="" />
-                </div>
-                <div class="timeline-panel">
-                    <div class="timeline-heading">
-                        <h4 style="font-family: Poppins;font-style: normal;font-weight: bold;font-size: 25px;color: #494949;text-shadow: 28px 28px 14px rgba(18, 122, 1, 0.25);">{{"home.services.consultancy" | translate }}</h4>
-                    </div>
-                    <div class="timeline-body">
-                        <p class="text-muted">{{"home.services.consultancy_desc" | translate }}</p>
-                    </div>
-                </div>
-            </li>
-        </ul>
+  <div class="container">
+    <div class="text-center">
+      <h2
+        style="
+          font-family: Poppins;
+          font-style: normal;
+          font-weight: bolder;
+          font-size: 68px;
+          color: #494949;
+          text-shadow: 28px 28px 14px rgba(18, 122, 1, 0.25);
+          text-align: center;
+        "
+      >
+        {{ "home.services.title" | translate }}
+      </h2>
     </div>
+    <br />
+    <ul class="timeline">
+      <li>
+        <div class="timeline-image">
+          <img
+            class="rounded-circle img-fluid"
+            src="../../assets/images/Group 53.png"
+            alt=""
+          />
+        </div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <h4
+              style="
+                font-family: Poppins;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 25px;
+                color: #494949;
+                text-shadow: 28px 28px 14px rgba(18, 122, 1, 0.25);
+              "
+            >
+              {{ "home.services.home_delivery" | translate }}
+            </h4>
+          </div>
+          <div class="timeline-body">
+            <p class="text-muted">
+              {{ "home.services.home_delivery_desc" | translate }}
+            </p>
+          </div>
+        </div>
+      </li>
+      <li class="timeline-inverted">
+        <div class="timeline-image">
+          <img
+            class="rounded-circle img-fluid"
+            src="../../assets/images/Group 51.png"
+            alt=""
+          />
+        </div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <h4
+              style="
+                font-family: Poppins;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 25px;
+                color: #494949;
+                text-shadow: 28px 28px 14px rgba(18, 122, 1, 0.25);
+              "
+            >
+              {{ "home.services.online_booking" | translate }}
+            </h4>
+          </div>
+          <div class="timeline-body">
+            <p class="text-muted">
+              {{ "home.services.online_booking_desc" | translate }}
+            </p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-image">
+          <img
+            class="rounded-circle img-fluid"
+            src="../../assets/images/Group 54.png"
+            alt=""
+          />
+        </div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <h4
+              style="
+                font-family: Poppins;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 25px;
+                color: #494949;
+                text-shadow: 28px 28px 14px rgba(18, 122, 1, 0.25);
+              "
+            >
+              {{ "home.services.online_market" | translate }}
+            </h4>
+          </div>
+          <div class="timeline-body">
+            <p class="text-muted">
+              {{ "home.services.online_market_desc" | translate }}
+            </p>
+          </div>
+        </div>
+      </li>
+      <li class="timeline-inverted">
+        <div class="timeline-image">
+          <img
+            class="rounded-circle img-fluid"
+            src="../../assets/images/Group 52.png"
+            alt=""
+          />
+        </div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <h4
+              style="
+                font-family: Poppins;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 25px;
+                color: #494949;
+                text-shadow: 28px 28px 14px rgba(18, 122, 1, 0.25);
+              "
+            >
+              {{ "home.services.consultancy" | translate }}
+            </h4>
+          </div>
+          <div class="timeline-body">
+            <p class="text-muted">
+              {{ "home.services.consultancy_desc" | translate }}
+            </p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
 </section>
 <!-- ---------------SERVICES ENDS HERE--------------- -->
 <!-- ---------------------------------------------------- -->
@@ -231,68 +457,157 @@
 <!-- ---------------------------------------------------- -->
 <!-- ---------------CONTACT STARTS HERE--------------- -->
 <section id="contact">
-    <div class="container">
-        <div class="row d-flex justify-content-center">
-            <h2 style="font-family: Poppins;font-style: normal;font-weight: bolder;font-size: 68px;color: #494949;text-shadow: 28px 28px 14px rgba(18, 122, 1, 0.25);padding-left: 10px;text-align: center;">{{"home.contact_us.title" | translate }}</h2>
-        </div>
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      <h2
+        style="
+          font-family: Poppins;
+          font-style: normal;
+          font-weight: bolder;
+          font-size: 68px;
+          color: #494949;
+          text-shadow: 28px 28px 14px rgba(18, 122, 1, 0.25);
+          padding-left: 10px;
+          text-align: center;
+        "
+      >
+        {{ "home.contact_us.title" | translate }}
+      </h2>
     </div>
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-lg-3 col-md-4">
-                <div class="info">
-                    <div>
-                        <i class="fa fa-map-marker"></i>
-                        <p>{{"home.contact_us.address" | translate }}</p>
-                    </div>
-                    <div>
-                        <i class="fa fa-envelope"></i>
-                        <p>{{"home.contact_us.email" | translate }}</p>
-                    </div>
-                    <div>
-                        <i class="fa fa-phone"></i>
-                        <p>{{"home.contact_us.phone_1" | translate }}</p>
-                        <i class="fa fa-phone"></i>
-                        <p>{{"home.contact_us.phone_2" | translate }}</p>
-                        <i class="fa fa-phone"></i>
-                        <p>{{"home.contact_us.phone_3" | translate }}</p>
-                    </div>
-                </div>
-                <div class="social-links">
-                    <a href="https://youtube.com/c/KrushiSarathi" class="twitter"><i class="fa fa-youtube"></i></a>
-                    <a href="https://www.facebook.com/krushi.sarathi/" class="facebook"><i class="fa fa-facebook"></i></a>
-                    <a href="https://instagram.com/krushisarathi?igshid=v8f6bzkdhlyn" class="instagram"><i class="fa fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/company/krushi-sarathi" class="linkedin"><i class="fa fa-linkedin"></i></a>
-                </div>
-            </div>
-            <div class="col-lg-5 col-md-8">
-                <div class="form">
-                    <form #contactForm="ngForm" (submit)="messageRequest(contactForm)">
-                        <div class="form-group">
-                            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" ngModel #name="ngModel" required />
-                            <p *ngIf="name.invalid && (name.dirty || name.touched)" class="text-danger">Name field cannot be empty.</p>
-                            <div class="validate"></div>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required email ngModel #email="ngModel" />
-                            <p *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger">Please enter Valid Email</p>
-                            <div class="validate"></div>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required ngModel #subject="ngModel" />
-                            <p *ngIf="subject.invalid && (subject.dirty || subject.touched)" class="text-danger">Subject field cannot be empty.</p>
-                            <div class="validate"></div>
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" name="message" rows="5" placeholder="Message" required ngModel #message="ngModel"></textarea>
-                            <p *ngIf="message.invalid && (message.dirty || message.touched)" class="text-danger">Message field cannot be empty.</p>
-                            <div class="validate"></div>
-                        </div>
-                        <div class="text-center"><button class="btn" style="background-color: #343a40;color:white" type="submit">{{"home.contact_us.send_message" | translate }}</button></div>
-                    </form>
-                </div>
-            </div>
+  </div>
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-3 col-md-4">
+        <div class="info">
+          <div>
+            <i class="fa fa-map-marker"></i>
+            <p>{{ "home.contact_us.address" | translate }}</p>
+          </div>
+          <div>
+            <i class="fa fa-envelope"></i>
+            <p>{{ "home.contact_us.email" | translate }}</p>
+          </div>
+          <div>
+            <i class="fa fa-phone"></i>
+            <p>{{ "home.contact_us.phone_1" | translate }}</p>
+            <i class="fa fa-phone"></i>
+            <p>{{ "home.contact_us.phone_2" | translate }}</p>
+            <i class="fa fa-phone"></i>
+            <p>{{ "home.contact_us.phone_3" | translate }}</p>
+          </div>
         </div>
+        <div class="social-links">
+          <a href="https://youtube.com/c/KrushiSarathi" class="twitter"
+            ><i class="fa fa-youtube"></i
+          ></a>
+          <a href="https://www.facebook.com/krushi.sarathi/" class="facebook"
+            ><i class="fa fa-facebook"></i
+          ></a>
+          <a
+            href="https://instagram.com/krushisarathi?igshid=v8f6bzkdhlyn"
+            class="instagram"
+            ><i class="fa fa-instagram"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/company/krushi-sarathi"
+            class="linkedin"
+            ><i class="fa fa-linkedin"></i
+          ></a>
+        </div>
+      </div>
+      <div class="col-lg-5 col-md-8">
+        <div class="form">
+          <form #contactForm="ngForm" (submit)="messageRequest(contactForm)">
+            <div class="form-group">
+              <input
+                type="text"
+                name="name"
+                class="form-control"
+                id="name"
+                placeholder="Your Name"
+                ngModel
+                #name="ngModel"
+                required
+              />
+              <p
+                *ngIf="name.invalid && (name.dirty || name.touched)"
+                class="text-danger"
+              >
+                Name field cannot be empty.
+              </p>
+              <div class="validate"></div>
+            </div>
+            <div class="form-group">
+              <input
+                type="email"
+                class="form-control"
+                name="email"
+                id="email"
+                placeholder="Your Email"
+                required
+                email
+                ngModel
+                #email="ngModel"
+              />
+              <p
+                *ngIf="email.invalid && (email.dirty || email.touched)"
+                class="text-danger"
+              >
+                Please enter Valid Email
+              </p>
+              <div class="validate"></div>
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                name="subject"
+                id="subject"
+                placeholder="Subject"
+                required
+                ngModel
+                #subject="ngModel"
+              />
+              <p
+                *ngIf="subject.invalid && (subject.dirty || subject.touched)"
+                class="text-danger"
+              >
+                Subject field cannot be empty.
+              </p>
+              <div class="validate"></div>
+            </div>
+            <div class="form-group">
+              <textarea
+                class="form-control"
+                name="message"
+                rows="5"
+                placeholder="Message"
+                required
+                ngModel
+                #message="ngModel"
+              ></textarea>
+              <p
+                *ngIf="message.invalid && (message.dirty || message.touched)"
+                class="text-danger"
+              >
+                Message field cannot be empty.
+              </p>
+              <div class="validate"></div>
+            </div>
+            <div class="text-center">
+              <button
+                class="btn"
+                style="background-color: #343a40; color: white"
+                type="submit"
+              >
+                {{ "home.contact_us.send_message" | translate }}
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 <!-- ---------------CONTACT ENDS HERE--------------- -->
 <!-- ---------------------------------------------------- -->
