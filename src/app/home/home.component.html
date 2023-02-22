@@ -4,12 +4,13 @@
 >
   <div id="heroCarousel" class="container carousel carousel-fade">
     <div class="carousel-item active">
-      <div class="carousel-container">
-        <h2 i18n="@@welcome_line">{{ "home.hero.title" | translate }}</h2>
-        <h3 style="color: white">साद विश्वासाची, हमी गुणवत्तेची</h3>
-        <!-- <p>Krushi Sarathi is an innovative idea which takes its roots from the struggles of farmers for buying the pre-requisites and selling the farms products. Agriculture being the backbone of our economy, needs to be worked out so that it is
-                    equipped with technical sustainability.
-                </p> -->
+      <div class="carousel-container">        
+        <h2  i18n="@@welcome_line">{{ "home.hero.title" | translate }}</h2>
+        <!-- <span  TYPINGANIMATOR [sentences]="['साद विश्वासाची', 'हमी गुणवत्तेची']" style="color: white"></span> -->
+        <h3>         
+          <span typingAnimator 
+          [sentences]="['साद विश्वासाची' , 'हमी गुणवत्तेची']" [showCursor]="true"  style="color: white"></span>
+        </h3>
       </div>
     </div>
   </div>
@@ -480,20 +481,20 @@
           </div>
         </div>
         <div class="social-links">
-          <a href="https://youtube.com/c/KrushiSarathi" class="twitter"
+          <a href="https://youtube.com/c/KrushiSarathi" class="twitter mr-2"
             ><i class="fa fa-youtube"></i
           ></a>
-          <a href="https://www.facebook.com/krushi.sarathi/" class="facebook"
+          <a href="https://www.facebook.com/krushi.sarathi/" class="facebook mr-2"
             ><i class="fa fa-facebook"></i
           ></a>
           <a
             href="https://instagram.com/krushisarathi?igshid=v8f6bzkdhlyn"
-            class="instagram"
+            class="instagram mr-2"
             ><i class="fa fa-instagram"></i
           ></a>
           <a
             href="https://www.linkedin.com/company/krushi-sarathi"
-            class="linkedin"
+            class="linkedin mr-2"
             ><i class="fa fa-linkedin"></i
           ></a>
         </div>
